@@ -1,0 +1,23 @@
+{
+  "name": "dbengine",
+  "version": "1.0.0",
+  "description": "Node.js IBM DB2 Integration with Connection Pooling and Type Conversion",
+  "main": "calldbapi.js",
+  "scripts": {
+    "start": "node calldbapi.js"
+  },
+  "author": "kristian",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^8.0.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "helmet": "^8.3.0",
+    "multer": "^2.3.0",
+    "pg": "^8.22.0",
+    "puppeteer": "^25.8.0",
+    "react-native-vector-icons": "^10.3.0",
+    "socket.io": "^4.8.3",
+    "ws": "^8.21.3"
+  }
+}

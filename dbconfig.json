@@ -1,0 +1,7 @@
+{
+  "user": "amgreat",
+  "host": "localhost",
+  "database": "amgreatdb",
+  "password": "amgreat",
+  "port": 5432
+}
