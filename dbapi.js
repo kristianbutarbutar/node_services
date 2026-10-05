@@ -2,9 +2,10 @@ const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
 const calldbapi = require('./calldbapi');
+const ip_api = require('./host');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // Security Middleware
 app.use(helmet({
@@ -16,11 +17,12 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:3000',
-  'http://127.0.0.1:3000'
+  'http://127.0.0.1:3000','http://amgreat.id','https://amgreat.id', `${ip_api.api_3000}`, `${ip_api.front_end}`
 ];
 
 app.use(cors({
   origin: function (origin, callback) {
+    console.log("allowedOrigins > ", JSON.stringify(allowedOrigins));
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {

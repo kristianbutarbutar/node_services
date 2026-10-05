@@ -2,6 +2,7 @@ const express = require('express');
 const net = require('net');
 const helmet = require('helmet');
 const cors = require('cors');
+const ip_api = require('./host');
 
 const app = express();
 
@@ -17,7 +18,7 @@ const allowedOrigins = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'http://localhost:3003',
-    'http://127.0.0.1:3003'
+    'http://127.0.0.1:3003','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3003}`,`${ip_api.front_end}`
 ];
 
 app.use(cors({

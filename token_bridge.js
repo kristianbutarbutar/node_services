@@ -2,10 +2,11 @@ const express = require('express');
 const http = require('http');
 const helmet = require('helmet');
 const cors = require('cors');
+const ip_api = require('./host');
 
 const app = express();
 const PORT = 3007;
-const MASTER_HOST = '127.0.0.1';
+const MASTER_HOST = `${ip_api.token_server}`;//'127.0.0.1';
 const MASTER_PORT = 8090;
 
 // Security Middleware
@@ -18,7 +19,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:3000',
-  'http://127.0.0.1:3000'
+  'http://127.0.0.1:3000','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3001}`,`${ip_api.front_end}`
 ];
 
 app.use(cors({

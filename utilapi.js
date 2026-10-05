@@ -10,9 +10,10 @@ const cors = require('cors');
 const dbutil = require('./dbutil');
 const calldbapi = require('./calldbapi');
 const pdfConverter = require('./PdfConverter');
+const ip_api = require('./host');
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = 3001;
 
 // Security Middleware - Disable default CSP on API server to prevent blocking cross-origin requests
 app.use(helmet({
@@ -25,7 +26,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:3001',
-  'http://127.0.0.1:3001'
+  'http://127.0.0.1:3001','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3001}`,`${ip_api.front_end}`
 ];
 
 app.use(cors({

@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs');
 const fsPromises = require('fs/promises');
 const { Storage } = require('@google-cloud/storage');
+const ip_api = require('./host');
 
 const app = express();
 
@@ -15,7 +16,7 @@ const storage = new Storage();
 
 // Configuration constants
 const PORT = 3002;
-const SAVE_OBJECT_ENDPOINT = process.env.SAVE_OBJECT_ENDPOINT || 'http://localhost:3000/api/save-object';
+const SAVE_OBJECT_ENDPOINT = process.env.SAVE_OBJECT_ENDPOINT || `${ip_api.api_3000}/api/save-object`; //'http://localhost:3000/api/save-object';
 const GCP_BUCKET_NAME = process.env.GCP_BUCKET_NAME || 'amgreat-app-public-assets';
 const GCP_DEST_FOLDER = process.env.GCP_DEST_FOLDER || 'upload-image';
 
@@ -26,7 +27,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
   'http://localhost:3001',
-  'http://127.0.0.1:3001'
+  'http://127.0.0.1:3001','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3001}`,`${ip_api.front_end}`
 ];
 
 // CORS Options

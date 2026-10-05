@@ -1,9 +1,10 @@
 const WebSocket = require('ws');
+const ip_api = require('./host');
 
-const WEBSOCKET_PORT = process.env.WS_PORT || 3004;
+const WEBSOCKET_PORT = 3004;
 
 // Configurable Chat API Endpoint
-const CHAT_API_URL = process.env.CHAT_API_URL || 'http://localhost:3003/api/chat';
+const CHAT_API_URL = `${ip_api.api_3003}/api/chat`; //'http://localhost:3003/api/chat';
 
 // Initialize WebSocket Server
 const wss = new WebSocket.Server({ port: WEBSOCKET_PORT });

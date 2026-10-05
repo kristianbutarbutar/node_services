@@ -4,6 +4,7 @@ const cors = require('cors');
 const http = require('http');
 const { Server } = require('socket.io');
 const net = require('net');
+const ip_api = require('./host');
 
 const app = express();
 
@@ -17,7 +18,7 @@ const allowedOrigins = [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
     'http://localhost:3000',
-    'http://127.0.0.1:3000'
+    'http://127.0.0.1:3000','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3001}`,`${ip_api.front_end}`
 ];
 
 app.use(cors({
@@ -39,9 +40,9 @@ const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
 
 // Configuration parameters
-const CPP_MASTER_HOST = '127.0.0.1';
+const CPP_MASTER_HOST = `${ip_api.voice_server}`;
 const CPP_MASTER_PORT = 8081; // Master Port P1
-const QUERY_OBJECT_API_URL = 'http://localhost:3000/api/query-object';
+const QUERY_OBJECT_API_URL = `${ip_api.api_3000}/api/query-object`;//'http://localhost:3000/api/query-object';
 const MAX_MASTER_RETRIES = 5;
 const RETRY_DELAY_MS = 1000; // 1 second delay between retries
 
