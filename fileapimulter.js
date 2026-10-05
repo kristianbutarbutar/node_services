@@ -14,7 +14,7 @@ const app = express();
 const storage = new Storage();
 
 // Configuration constants
-const PORT = process.env.FILE_API_PORT || process.env.FILE_PORT || 3002;
+const PORT = 3002;
 const SAVE_OBJECT_ENDPOINT = process.env.SAVE_OBJECT_ENDPOINT || 'http://localhost:3000/api/save-object';
 const GCP_BUCKET_NAME = process.env.GCP_BUCKET_NAME || 'amgreat-app-public-assets';
 const GCP_DEST_FOLDER = process.env.GCP_DEST_FOLDER || 'upload-image';
@@ -328,7 +328,7 @@ async function copyToGCPBucket(input) {
  * POST /api/upload
  */
 app.post('/api/upload', async (req, res) => {
-  const { sessionid = '', message = '', files = [], htmleditor = '' } = req.body || {};
+  const { sessionid = '', message = '', files = [], htmleditor = '', uploadId } = req.body || {};
 
   if (!Array.isArray(files) || files.length === 0) {
     return res.status(400).json({

@@ -346,9 +346,9 @@ function __IGenerator(formData, colsJson) {
       });
 
       if (lowerMetadataType === 'date') {
-        placeholders.push(`TO_DATE($${params.length}, 'YYYY-MM-DD')`);
+        placeholders.push(`TO_DATE($${params.length}, 'DD-MM-YYYY')`);
       } else if (lowerMetadataType.includes('timestamp')) {
-        placeholders.push(`TO_TIMESTAMP($${params.length}, 'YYYY-MM-DD HH24:MI:SS')`);
+        placeholders.push(`TO_TIMESTAMP($${params.length}, 'DD-MM-YYYY HH24:MI:SS')`);
       }
     } else if (lowerMetadataType.includes('timestamp') && (rawVal === undefined || rawVal === null || String(rawVal).trim() === '')) {
       placeholders.push('CURRENT_TIMESTAMP');
@@ -840,7 +840,7 @@ async function updateObject(input) {
           setClauses.push(`${colName} = TO_TIMESTAMP($${paramIndex}, 'YYYY-MM-DD HH24:MI:SS')`);
         }
       } else if (lowerMetadataType.includes('timestamp') && (rawVal === undefined || rawVal === null || String(rawVal).trim() === '')) {
-        setClauses.push(`${colName} = CURRENT_TIMESTAMP`); paramIndex--;
+        setClauses.push(`${colName} = CURRENT_TIMESTAMP`);
       } else {
         setClauses.push(`${colName} = $${paramIndex}`);
         params.push({

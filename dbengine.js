@@ -62,10 +62,10 @@ function convertDataType(value, targetType = 'VARCHAR') {
     throw new Error(`Invalid Boolean value: ${value}`);
   }
 
-  if (isDate) {
+  if (isDate || isTimestamp) {
     //const dateObj = new Date(strVal);
-    const [day, month, year] = strVal.split("-");
-    const dateObj = new Date(year, month - 1, day);
+    const [year, month, day] = strVal.split("-");
+    const dateObj = new Date(year, month, day);
     if (isNaN(dateObj.getTime())) throw new Error(`Invalid Date format: ${value}`);
     return strVal; //dateObj.toISOString().split('T')[0];
   }

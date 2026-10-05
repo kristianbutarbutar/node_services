@@ -1,59 +1,115 @@
 const express = require('express');
-const net = require('net');
-const app = express();
+const http = require('http');
+const helmet = require('helmet');
+const cors = require('cors');
 
+const app = express();
+const PORT = 3007;
+const MASTER_HOST = '127.0.0.1';
+const MASTER_PORT = 8090;
+
+// Security Middleware
+app.use(helmet({
+  crossOriginResourcePolicy: { policy: "cross-origin" }
+}));
+
+// CORS Middleware - Configured for Vite (5173) and local client/server (3000)
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+  'http://localhost:3000',
+  'http://127.0.0.1:3000'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS policy: Access denied for origin ${origin}`));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'x-session-id'],
+  credentials: true
+}));
+
+// Middleware to parse incoming JSON payloads
 app.use(express.json());
 
-const MASTER_HOST = '127.0.0.1';
-const MASTER_P1_PORT = 8090;
+// Helper function to forward JSON requests to the C++ Token Master socket server
+function forwardToMaster(payloadObj, res) {
+    const dataString = JSON.stringify(payloadObj);
 
-const sendToMaster = (payload) => {
-    return new Promise((resolve, reject) => {
-        const client = new net.Socket();
-        client.connect(MASTER_P1_PORT, MASTER_HOST, () => {
-            client.write(JSON.stringify(payload));
+    const options = {
+        hostname: MASTER_HOST,
+        port: MASTER_PORT,
+        path: '/',
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(dataString)
+        }
+    };
+
+    const proxyReq = http.request(options, (proxyRes) => {
+        let responseBody = '';
+
+        proxyRes.on('data', (chunk) => {
+            responseBody += chunk;
         });
 
-        client.on('data', (data) => {
-            client.destroy();
+        proxyRes.on('end', () => {
             try {
-                resolve(JSON.parse(data.toString()));
+                let jsonResponse;
+                if (responseBody.includes('HTTP/1.1')) {
+                    const bodyIndex = responseBody.indexOf('\r\n\r\n');
+                    const cleanBody = bodyIndex !== -1 ? responseBody.substring(bodyIndex + 4) : responseBody;
+                    jsonResponse = JSON.parse(cleanBody);
+                } else {
+                    jsonResponse = JSON.parse(responseBody);
+                }
+
+                res.status(proxyRes.statusCode || 200).json(jsonResponse);
             } catch (err) {
-                reject(new Error('Invalid JSON from Master'));
+                res.status(500).json({ error: 'Token service unavailable', details: 'Invalid JSON from Master', raw: responseBody });
             }
         });
-
-        client.on('error', (err) => {
-            client.destroy();
-            reject(err);
-        });
     });
-};
 
-// API Endpoint: Generate Token
-app.post('/api/tokens/generate', async (req, res) => {
-    try {
-        const { uid, duration, channel } = req.body;
-        const payload = { action: 'generate_token', uid, duration: String(duration || 60), channel: channel || 'api' };
-        const result = await sendToMaster(payload);
-        res.json(result);
-    } catch (err) {
-        res.status(500).json({ error: 'Token service unavailable', details: err.message });
+    proxyReq.on('error', (err) => {
+        res.status(503).json({ error: 'Token service unavailable', details: err.message });
+    });
+
+    proxyReq.write(dataString);
+    proxyReq.end();
+}
+
+// Unified token endpoint handling both generate and check actions
+app.post('/api/token', (req, res) => {
+    const { uid, action, duration, channel, token } = req.body;
+
+    if (!uid || !action) {
+        return res.status(400).json({ error: 'Bad Request', details: 'Missing required fields: uid or action' });
     }
+
+    const payload = { uid, action };
+
+    if (action === 'generate_token') {
+        payload.duration = duration || 60;
+        payload.channel = channel || 'api';
+    } else if (action === 'check_token_expiration') {
+        if (!token) {
+            return res.status(400).json({ error: 'Bad Request', details: 'Missing token for expiration check' });
+        }
+        payload.token = token;
+    } else {
+        return res.status(400).json({ error: 'Bad Request', details: 'Invalid action specified' });
+    }
+
+    forwardToMaster(payload, res);
 });
 
-// API Endpoint: Check Token Expiration
-app.post('/api/tokens/check', async (req, res) => {
-    try {
-        const { uid, token } = req.body;
-        const payload = { action: 'check_token_expiration', uid, token };
-        const result = await sendToMaster(payload);
-        res.json(result);
-    } catch (err) {
-        res.status(500).json({ error: 'Token validation service unavailable', details: err.message });
-    }
-});
-
-app.listen(3007, () => {
-    console.log('[TOKEN BRIDGE] Node.js bridge running on port 3007');
+app.listen(PORT, () => {
+    console.log(`[TOKEN BRIDGE] Express API Bridge running on http://localhost:${PORT}`);
 });

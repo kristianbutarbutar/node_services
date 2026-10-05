@@ -72,6 +72,7 @@ app.post('/api/query-object', async (req, res) => {
     const tableName = req.body.tableName || req.body.objectid;
     const whereClause = req.body.whereClause || [];
     const filterColumns = req.body.filterColumns || [];
+    const noOfRow = req.body.noOfRow || 0;
 
     if (!tableName) {
       return res.status(400).json({
@@ -89,7 +90,10 @@ app.post('/api/query-object', async (req, res) => {
     //console.log("/api/query-object payload ", JSON.stringify(req.body));
     const result = await calldbapi.queryObject(tableName, whereClause, filterColumns);
     //console.log("/api/query-object result ", JSON.stringify(result));
-
+    if(noOfRow && noOfRow > 0 && result && result.data && result.data.length > noOfRow) {
+        const sliceData = result.data.slice(0, noOfRow);
+        result.data = sliceData;
+    }
     res.status(result.success ? 200 : 400).json(result);
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
