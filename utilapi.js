@@ -26,7 +26,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:3001',
-  'http://127.0.0.1:3001','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3001}`,`${ip_api.front_end}`
+  'http://127.0.0.1:3001','http://amgreat.id','https://amgreat.id','http://localhost',`${ip_api.api_3000}`,`${ip_api.api_3001}`,`${ip_api.front_end}`
 ];
 
 app.use(cors({
@@ -49,7 +49,7 @@ app.use(express.json());
  * POST /api/query
  * Invokes dbutil.getObjectRecords with the incoming request body payload.
  */
-app.post('/api/query', async (req, res) => {
+app.post('/api/inquery', async (req, res) => {
   try {
     const result = await dbutil.getObjectRecords(req.body);
     res.status(result.success !== false ? 200 : 400).json(result);
@@ -143,7 +143,8 @@ app.post('/api/html-to-pdf', async (req, res) => {
 });
 
 // Start Utility API Server on port 3001
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
+//app.listen(PORT, '0.0.0.0', () => {
   console.log(`🛡️  Util API Server running on http://localhost:${PORT}`);
   console.log(`📡 CORS allowed for: ${allowedOrigins.join(', ')}`);
 });

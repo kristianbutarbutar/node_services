@@ -165,7 +165,7 @@ async function getListForColumnId(input) {
   };
 
   const mapResult = await calldbapi.executeQuery(queryPayload);
-  console.log("getListForColumnId > mapResult > ", JSON.stringify(mapResult));
+  //console.log("getListForColumnId > mapResult > ", JSON.stringify(mapResult));
 
   if (!mapResult.success) {
     return {
@@ -202,11 +202,11 @@ async function getListForColumnId(input) {
     try {
       if (sqlList.startsWith('{') && sqlList.endsWith('}')) {
 
-        console.log("getListForColumnId > before > sqlList > ", sqlList);
+        //console.log("getListForColumnId > before > sqlList > ", sqlList);
 
         listResponse = await getObject(JSON.parse(sqlList));
 
-        console.log("getListForColumnId > after > sqlList > listResponse > ", JSON.stringify(listResponse));
+        //console.log("getListForColumnId > after > sqlList > listResponse > ", JSON.stringify(listResponse));
       }
     } catch (parseErr) {
       return {

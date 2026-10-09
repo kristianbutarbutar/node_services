@@ -300,7 +300,8 @@ app.post('/api/delete', async (req, res) => {
 });
 
 // Start Express HTTP Server
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
+//app.listen(PORT, '0.0.0.0', () => {
   console.log(`🛡️  Secure DB API Server running on http://localhost:${PORT}`);
   console.log(`📡 CORS allowed for: ${allowedOrigins.join(', ')}`);
 });

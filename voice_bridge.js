@@ -18,7 +18,7 @@ const allowedOrigins = [
     'http://localhost:5173',
     'http://127.0.0.1:5173',
     'http://localhost:3000',
-    'http://127.0.0.1:3000','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3001}`,`${ip_api.front_end}`
+    'http://127.0.0.1:3000', 'http://amgreat.id', 'https://amgreat.id', `${ip_api.api_3000}`, `${ip_api.api_3001}`, `${ip_api.front_end}`
 ];
 
 app.use(cors({
@@ -36,8 +36,13 @@ app.use(cors({
 
 app.use(express.json());
 
+
 const server = http.createServer(app);
-const io = new Server(server, { cors: { origin: "*" } });
+//const io = new Server(server, { cors: { origin: "*" } });
+const io = new Server(server, {
+    path: '/callio', // Tells Socket.io to accept connections under the /callio prefix
+    cors: { origin: "*" }
+});
 
 // Configuration parameters
 const CPP_MASTER_HOST = `${ip_api.voice_server}`;
@@ -155,8 +160,8 @@ io.on('connection', (socket) => {
                 })
                 .catch((err) => {
                     console.error('[BRIDGE MASTER ERROR]:', err.message);
-                    socket.emit('voice_error', { 
-                        message: 'Voice service is currently unavailable. Please contact the administrator of the portal.' 
+                    socket.emit('voice_error', {
+                        message: 'Voice service is currently unavailable. Please contact the administrator of the portal.'
                     });
                 });
 

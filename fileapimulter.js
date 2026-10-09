@@ -16,7 +16,8 @@ const storage = new Storage();
 
 // Configuration constants
 const PORT = 3002;
-const SAVE_OBJECT_ENDPOINT = process.env.SAVE_OBJECT_ENDPOINT || `${ip_api.api_3000}/api/save-object`; //'http://localhost:3000/api/save-object';
+const SAVE_OBJECT_ENDPOINT = `${ip_api.api_3000}/api/save-object`;
+const DROP_OBJECT_ENDPOINT = `${ip_api.api_3000}/api/drop-object`;
 const GCP_BUCKET_NAME = process.env.GCP_BUCKET_NAME || 'amgreat-app-public-assets';
 const GCP_DEST_FOLDER = process.env.GCP_DEST_FOLDER || 'upload-image';
 
@@ -27,7 +28,12 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
   'http://localhost:3001',
-  'http://127.0.0.1:3001','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3001}`,`${ip_api.front_end}`
+  'http://127.0.0.1:3001',
+  'http://amgreat.id',
+  'https://amgreat.id',
+  `${ip_api.api_3000}`,
+  `${ip_api.api_3001}`,
+  `${ip_api.front_end}`
 ];
 
 // CORS Options
@@ -123,7 +129,6 @@ app.get('/api/read', async (req, res) => {
     const ext = path.extname(fileName).toLowerCase().replace('.', '');
     const contentType = getMimeTypeByExt(ext);
 
-    console.log("fileName > 1 > ", fileName )
     // 1. Check local storage first
     const localFilePath = path.join(uploadDir, fileName);
     if (fs.existsSync(localFilePath)) {
@@ -132,14 +137,11 @@ app.get('/api/read', async (req, res) => {
       if (sessionid) res.setHeader('x-session-id', sessionid);
       return fs.createReadStream(localFilePath).pipe(res);
     }
-    console.log("fileName > 2 > ", fileName )
 
     // 2. Fall back to GCS via Storage client
     const blobPath = `${GCP_DEST_FOLDER}/${fileName}`;
     const file = storage.bucket(GCP_BUCKET_NAME).file(blobPath);
-    
-    console.log("fileName > 3 > blobPath > ", blobPath )
-    
+
     const [exists] = await file.exists();
     if (!exists) {
       return res.status(404).json({
@@ -152,8 +154,6 @@ app.get('/api/read', async (req, res) => {
     res.setHeader('Content-Type', contentType);
     res.setHeader('Content-Disposition', `inline; filename="${fileName}"`);
     if (sessionid) res.setHeader('x-session-id', sessionid);
-
-    console.log("fileName > 4 > blobPath > ", fileName )
 
     return file.createReadStream()
       .on('error', (streamErr) => {
@@ -177,7 +177,7 @@ app.get('/api/read', async (req, res) => {
  * Archives uploaded files and records status into database objects via /api/save-object.
  */
 async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
-  const { savedFiles = [], isSuccess = 'false', sessionid = '', htmleditor = '' } = input || {};
+  const { savedFiles = [], isSuccess = 'false', sessionid = '', htmleditor = '', recordid = '' } = input || {};
   const results = {
     response1: null,
     id: '',
@@ -185,12 +185,15 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
     success: false
   };
 
+  console.log("archieveUploadedFiles > received recorid = ", recordid);
+
   try {
     const payload1 = {
-      objectid: htmleditor && htmleditor!=='' ? 'fdeb98a5-9217-482a-9f2d-051ebe5b7c59' : 'OBJ_UPLOADED_FORM_ID',
+      objectid: htmleditor && htmleditor !== '' ? 'fdeb98a5-9217-482a-9f2d-051ebe5b7c59' : 'OBJ_UPLOADED_FORM_ID',
       columns: [
         { col_name: 'status', value: isSuccess }
-      ]
+      ],
+      recordid: recordid || ''
     };
 
     const res1 = await fetch(endpoint, {
@@ -209,11 +212,35 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
     const isResponseStatusTrue = String(response1?.status || response1?.success) === 'true' || response1?.status === true;
 
     if (isSuccessMatch && isResponseStatusTrue && Array.isArray(savedFiles)) {
+
+      const __pid = recordid && recordid.trim() !== '' ? recordid : response1.id;
+
+      console.log("archieveUploadedFiles > 1 ", __pid);
+
+      if (recordid && recordid.trim() !== '') {
+
+        let __result = {};
+
+        try {
+          __result = await doDrop({ objectid: 'UPLOADED_FILES_FORM_ID', recordid: recordid, column: "pid", sessionid: sessionid });
+        } catch (err) {
+          console.error('Error in archieveUploadedFiles 1111 :', err);
+        }
+
+
+        response1.id = __pid;
+
+        console.log("archieveUploadedFiles > 2 ", response1.id, " > __pid = ", __pid, " > __result > ", JSON.stringify(__result));
+
+      }
+
+      console.log("archieveUploadedFiles > 3 ", response1.id, " > __pid = ", __pid);
+
       for (const file of savedFiles) {
         const payload2 = {
           objectid: 'UPLOADED_FILES_FORM_ID',
           columns: [
-            { col_name: 'pid', value: response1.id || '' },
+            { col_name: 'pid', value: __pid || '' },
             { col_name: 'originalName', value: file.originalName },
             { col_name: 'savedName', value: file.savedName },
             { col_name: 'size', value: file.size },
@@ -242,6 +269,42 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
     console.error('Error in archieveUploadedFiles:', err);
     return {
       ...results,
+      success: false,
+      error: err.message
+    };
+  }
+}
+
+/**
+ * Drops/deletes an object by calling the drop-object API endpoint.
+ */
+async function doDrop(input, endpoint = DROP_OBJECT_ENDPOINT) {
+  const { objectid = '', recordid = '', sessionid = '', column = '' } = input || {};
+
+  try {
+    const payload = {
+      objectid,
+      recordid, bycolumn: column
+    };
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        ...(sessionid ? { 'x-session-id': sessionid } : {})
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+    return {
+      success: response.ok,
+      status: response.status,
+      data
+    };
+  } catch (err) {
+    console.error('Error in doDrop:', err);
+    return {
       success: false,
       error: err.message
     };
@@ -329,7 +392,7 @@ async function copyToGCPBucket(input) {
  * POST /api/upload
  */
 app.post('/api/upload', async (req, res) => {
-  const { sessionid = '', message = '', files = [], htmleditor = '', uploadId } = req.body || {};
+  const { sessionid = '', message = '', files = [], htmleditor = '', recordid = '' } = req.body || {};
 
   if (!Array.isArray(files) || files.length === 0) {
     return res.status(400).json({
@@ -340,6 +403,8 @@ app.post('/api/upload', async (req, res) => {
       files: []
     });
   }
+
+  console.log("inside /api/upload, recordid received = ", recordid);
 
   const savedFiles = [];
   const errors = [];
@@ -405,13 +470,15 @@ app.post('/api/upload', async (req, res) => {
   const archiveResult = await archieveUploadedFiles({
     savedFiles,
     isSuccess: isSuccess ? 'true' : 'false',
-    sessionid, htmleditor:htmleditor,
+    sessionid,
+    htmleditor,
+    recordid
   });
 
   let gcpBucketResult = null;
   if (archiveResult && archiveResult.success && savedFiles.length > 0) {
     gcpBucketResult = await copyToGCPBucket({
-      sessionid: sessionid,
+      sessionid,
       bucketName: GCP_BUCKET_NAME,
       destFolder: GCP_DEST_FOLDER,
       file: savedFiles.map((file) => ({
@@ -433,6 +500,25 @@ app.post('/api/upload', async (req, res) => {
     gcpUpload: gcpBucketResult,
     errors: errors.length > 0 ? errors : undefined
   });
+});
+
+/**
+ * POST /api/drop
+ * Endpoint wrapper to trigger the doDrop function
+ */
+app.post('/api/drop', async (req, res) => {
+  const { objectid = '', recordid = '', sessionid = req.headers['x-session-id'] || '' } = req.body || {};
+
+  if (!objectid || !recordid) {
+    return res.status(400).json({
+      success: false,
+      error: "Missing required fields: 'objectid' and 'recordid' are required."
+    });
+  }
+
+  const dropResult = await doDrop({ objectid, recordid, sessionid });
+
+  return res.status(dropResult.success ? 200 : 400).json(dropResult);
 });
 
 // JSON parsing & global error handler

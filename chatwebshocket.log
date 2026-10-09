@@ -1,0 +1,315 @@
+[WebSocket Server] Running on ws://localhost:3004
+urlParams:  URLSearchParams { 'uid' => '4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb' } , uid= 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Client connected and registered -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Client disconnected -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+urlParams:  URLSearchParams { 'uid' => '4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb' } , uid= 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Client connected and registered -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Client disconnected -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+urlParams:  URLSearchParams { 'uid' => '4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb' } , uid= 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Client connected and registered -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Client disconnected -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+urlParams:  URLSearchParams { 'uid' => '4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb' } , uid= 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Client connected and registered -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Client disconnected -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+urlParams:  URLSearchParams { 'uid' => '4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb' } , uid= 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Client connected and registered -> UID: 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}
+[WebSocket] Message received from UID 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb: {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+sendRequest > input >  {"action":"read_message","uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"],"fromseqno":"0"}
+[WebSocket] sendRequest Error: HTTP error! status: 500
+chatwebshocket > resp > uid = 4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb, response > {"status":"error","message":"Failed to communicate with chat API endpoint","details":"HTTP error! status: 500"}

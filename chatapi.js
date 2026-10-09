@@ -445,6 +445,6 @@ app.get('/api/loadChatUser', async (req, res) => {
     }
 });
 
-app.listen(API_PORT, () => {
+app.listen(API_PORT,'0.0.0.0' () => {
     console.log(`[Chat API Gateway] Running on http://localhost:${API_PORT}`);
 });

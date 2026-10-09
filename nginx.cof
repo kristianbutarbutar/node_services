@@ -1,0 +1,49 @@
+server {
+    listen 443 ssl;
+    server_name amgreat.id localhost;
+
+    ssl_certificate /etc/ssl/certs/amgreat.id.pem;
+    ssl_certificate_key /etc/ssl/private/amgreat.id.key;
+
+    root /var/www/amgreat.id;
+    index index.html index.htm;
+
+    # Frontend Single Page Application Routing
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # Proxy for Ports 3000 (Columns, Queries, Save, Drop, Update)
+    location ~ ^/api/(columns|query-object|query-object-in-table|save-object|drop-object|drop|update-object) {
+        proxy_pass http://10.128.0.2:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    # Proxy for Ports 3001 (Query, Lists, Schemas, PDF conversion)
+    location ~ ^/api/(query|get-list|colList|get-object-schema|html-to-pdf) {
+        proxy_pass http://10.128.0.2:3001;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+    }
+
+    # Proxy for Port 3002 (Read, Upload)
+    location ~ ^/api/(read|upload) {
+        proxy_pass http://10.128.0.2:3002;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+    }
+
+    # Proxy for Port 3003 (Chat endpoints)
+    location ~ ^/api/chat {
+        proxy_pass http://10.128.0.6:3003;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+    }
+    location /api/loadChatUser {
+        proxy_pass http://10.128.0.6:3003;
+        proxy_http_version 1.1;
+"/etc/nginx/sites-available/amgreat.id" 69L, 2147B                                                               25,0-1        Top

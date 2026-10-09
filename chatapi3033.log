@@ -1,0 +1,300 @@
+[Chat API Gateway] Running on http://localhost:3033
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+socketPayload >  {"action":"write_message","uid":"IF02098","touid":["Kristian Butar"],"message":"jk","timestamp":"2026-10-08T08:14:14.354Z"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080
+uid >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb  > touid  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+/api/chat touid[] ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb","touid":["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]}
+input.touid 2 > input.touid >  ["828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7"]
+fetch response >  828306964f28a90b6f1e5e3e2cbdcf53d6103c81aaab7 , >>  {"success":true,"count":1,"data":[{"uid":"Kristian Butar"}],"view":[{"col_name":"uid","value":"Kristian Butar","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  Kristian Butar
+input.touid 4 > input.touid >  ["Kristian Butar"]
+resolvedRecords > uid and touid[] >  {"uid":"IF02098","touid":["Kristian Butar"]}
+fromseqno >  0
+socketPayload >  {"action":"read_message","uid":"IF02098","touid":["Kristian Butar"],"fromseqno":"0"}
+[API Gateway Error]: connect ECONNREFUSED 127.0.0.1:8080

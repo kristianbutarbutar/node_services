@@ -1,6 +1,15 @@
 const WebSocket = require('ws');
 const ip_api = require('./host');
 
+// Global process error handlers to prevent sudden background crashes
+process.on('uncaughtException', (err) => {
+    console.error('[Load Balancer] CRITICAL UNCAUGHT EXCEPTION:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+    console.error('[Load Balancer] CRITICAL UNHANDLED REJECTION at:', promise, 'reason:', reason);
+});
+
 const WEBSOCKET_PORT = 3004;
 
 // Configurable Chat API Endpoint

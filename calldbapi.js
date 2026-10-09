@@ -7,7 +7,8 @@ const dbEngine = require('./dbengine');
  * @returns {string} 45-character unique identifier.
  */
 function getUUID() {
-  return crypto.randomBytes(32).toString('hex').substring(0, 45);
+  //return crypto.randomBytes(32).toString('hex').substring(0, 45);
+  return crypto.randomUUID();
 }
 
 /**
@@ -37,7 +38,7 @@ async function getTableName(json) {
     };
 
     const response = await dbEngine.executeQuery(queryPayload);
-    
+
     console.log("getTableName: ", JSON.stringify(response), " => ", response.data[0].tablename);
 
     return response.data[0];
@@ -192,11 +193,14 @@ function __QGenerator(columnsJson, whereClause = []) {
 
   if (Array.isArray(columns) && columns.length > 0) {
     const colList = [];
+    const arrmerge_with_col_name = [];
+    const col_name_col = [];
     let refTabCtr = 1;
     let columnName = "";
+    let _colum_ref = ""
 
     columns.forEach((col, index) => {
-      columnName = '';
+      columnName = ''; _colum_ref = '';
 
       // Check if ref_col is defined and not empty
       if (col && col.ref_col && String(col.ref_col).trim().length > 0) {
@@ -219,6 +223,7 @@ function __QGenerator(columnsJson, whereClause = []) {
           const targetTable = displayCol.includes('.') ? displayCol.split('.')[0].trim() : displayCol;
           const targetCol = displayCol.includes('.') ? displayCol.split('.')[1].trim() : displayCol;
           const seqNum = col.seq !== undefined && col.seq !== null ? col.seq : (index + 1);
+          _colum_ref = `tab${refTabCtr}.${targetCol}`;
           columnName = `'[' || ${tableName}.${col.col_name} || ']' || tab${refTabCtr}.${targetCol} AS ${col.col_name}`;
           referencedColumns.push(`tab${refTabCtr}.${targetCol} AS col${refTabCtr}`);
         }
@@ -228,12 +233,51 @@ function __QGenerator(columnsJson, whereClause = []) {
       if (col && col.col_name) {
         if (columnName && columnName !== '' && col.col_name.toLowerCase() !== 'formid') {
           colList.push(`${columnName}`);
+          col_name_col.push({ "col_name": col.col_name, "tobe": _colum_ref });
         } else {
           colList.push(`${tableName}.${col.col_name}`);
+          col_name_col.push({ "col_name": col.col_name, "tobe": `${tableName}.${col.col_name}` });
         }
       }
 
+      //--- loop columns.forEach -> merge_with_col_name 
+      if (col && col.merge_with_col_name && String(col.merge_with_col_name).trim().length > 0) {
+        arrmerge_with_col_name.push({ "col_name": col.col_name, "merge": col.merge_with_col_name });
+      }
+
     });
+
+    //--- loop columns.forEach -> merge_with_col_name 
+    if (arrmerge_with_col_name && arrmerge_with_col_name.length > 0) {
+
+      arrmerge_with_col_name.forEach((__m, rowIndex) => {
+        const _col_name = __m.col_name;
+        const _merge = __m.merge;
+        let _m_tobe = "";
+
+        console.log("Merging arrmerge_with_col_name > ", _col_name, " merge = ", _merge);
+
+        col_name_col.forEach((__c, idx) => {
+          const _c_n = __c.col_name;
+          const _c_n_c = __c.tobe;
+          if (_c_n.trim().toLowerCase() === _merge.trim().toLowerCase()) {
+            _m_tobe = _c_n_c;
+            return true;
+          }
+        });
+
+        colList.forEach((colstr, idx) => {
+
+          if (colstr.trim().toLowerCase().endsWith(" " + _col_name.toLowerCase())
+            || colstr.trim().toLowerCase().endsWith("." + _col_name.toLowerCase())) {
+            const new_col = colstr.trim();
+            colList[idx] = _m_tobe + " || '.' || " + new_col + ` as ${_col_name}`;
+
+          }
+        });
+
+      });
+    }
 
     if (colList.length > 0) {
       selectClause = colList.join(", ");
@@ -465,7 +509,7 @@ async function queryObject(tableName, whereClause = [], filterColumns = []) {
   return {
     ...queryResult,
     columns: columnsJson,
-    objectLabel:tableDBName.label
+    objectLabel: tableDBName.label
   };
 }
 
@@ -599,7 +643,7 @@ async function saveForm(formData) {
         idParam.value = id_uuid;
       }
     }
-    //console.log(" await SaveForm => ", JSON.stringify(insertPayload));
+    console.log(" await SaveForm => ", JSON.stringify(insertPayload));
 
     const insertResult = await executeInsert(insertPayload);
 
@@ -608,12 +652,15 @@ async function saveForm(formData) {
     return insertResult;
 
   } catch (err) {
+    console.log("saveForm.err > ", JSON.stringify(err));
     return {
       success: false,
-      error:  err.message
+      error: err.message
     };
   }
 }
+
+
 
 /**
  * Wrapper for UPDATE operations
@@ -641,6 +688,7 @@ async function dropObject(input) {
   try {
     const tableName = input ? (input.tableName || input.objectid) : null;
     const recordid = input ? (input.recordid ?? input.id) : null;
+    const column = input && input.bycolumn && input.bycolumn !== '' ? input.bycolumn : "id";
     const sessionid = input ? (input.sessionid || '') : '';
 
     console.log("dropObject ", JSON.stringify(input));
@@ -661,9 +709,11 @@ async function dropObject(input) {
       };
     }
 
-    const colsJson = await getTableColumns(tableName);
+    const tableDBName = await getTableName({ id: tableName });
 
-    let idType = 'INT';
+    const colsJson = await getTableColumns(tableDBName.tablename);
+
+    let idType = 'VARCHAR';
     if (colsJson && Array.isArray(colsJson.columns)) {
       const idCol = colsJson.columns.find(col => {
         const name = col.col_name || col.column_name || col.columnname || col.name || col.colname;
@@ -674,14 +724,15 @@ async function dropObject(input) {
         idType = idCol.dt_type || idCol.data_type || idCol.datatype || idCol.type || idCol.col_type || 'INT';
       }
     }
-    console.log("dropObject tableName ", tableName);
+    console.log("dropObject tableName ", tableDBName.tablename);
 
     const deletePayload = {
-      sql: `DELETE FROM ${tableName} WHERE id = $1`,
+      sql: `DELETE FROM ${tableDBName.tablename} WHERE ${column} = $1 `,
       params: [
         { value: recordid, type: idType }
       ]
     };
+    console.log("deletePayload > ", JSON.stringify(deletePayload));
 
     const deleteResult = await dbEngine.executeDelete(deletePayload);
 
@@ -864,9 +915,6 @@ async function updateObject(input) {
       value: recordid,
       type: idType
     });
-
-    console.log("updated Object 1> ", sql);
-    console.log("updated Object 2> ", JSON.stringify(params));
 
     const updateResult = await dbEngine.executeUpdate({ sql, params });
 

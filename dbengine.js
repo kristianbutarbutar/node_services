@@ -216,7 +216,7 @@ async function executeInsert(jsonInput) {
       affectedRows: result.rowCount
     };
   } catch (err) {
-    const __err =  mapDatabaseError(err);
+    const __err = mapDatabaseError(err);
     return { success: false, error: __err.message || err.message };
   }
 }
