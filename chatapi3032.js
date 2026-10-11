@@ -18,7 +18,7 @@ const allowedOrigins = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
     'http://localhost:3003',
-    'http://127.0.0.1:3003','http://amgreat.id','https://amgreat.id',`${ip_api.api_3000}`,`${ip_api.api_3003}`,`${ip_api.front_end}`
+    'http://127.0.0.1:3003', 'http://amgreat.id', 'https://amgreat.id', `${ip_api.api_3000}`, `${ip_api.api_3003}`, `${ip_api.front_end}`
 ];
 
 app.use(cors({
@@ -38,7 +38,7 @@ app.use(cors({
 app.use(express.json());
 
 const CHAT_SERVER_PORT = 8080;//3333;
-const CHAT_SERVER_HOST = '127.0.0.1';
+const CHAT_SERVER_HOST = `${ip_api.chat_server}`;
 const API_PORT = 3032;
 
 // Configurable Query Object API URL
@@ -265,9 +265,9 @@ app.post('/api/chat', async (req, res) => {
         console.log("serverResponse > ", serverResponse);
 
         const __parsed = parseValidJsonResponse(serverResponse);
-        
-        if(socketPayload && socketPayload.action === 'read_message'){
-            
+
+        if (socketPayload && socketPayload.action === 'read_message') {
+
             console.log("serverResponse > read_message clear", JSON.stringify(__parsed));
         }
 
@@ -284,81 +284,81 @@ app.post('/api/chat', async (req, res) => {
 });
 
 function parseValidJsonResponse(responseObj) {
-  let parsedRaw = null;
+    let parsedRaw = null;
 
-  try {
-    // Case 1: If the input itself is already the data object containing `node`
-    if (responseObj && Array.isArray(responseObj.node)) {
-      parsedRaw = responseObj;
-    } 
-    // Case 2: If it's wrapped inside `responseObj.raw` as an object
-    else if (typeof responseObj?.raw === 'object' && responseObj.raw !== null) {
-      parsedRaw = responseObj.raw;
-    } 
-    // Case 3: If it's wrapped as a JSON string in `responseObj.raw`
-    else if (typeof responseObj?.raw === 'string') {
-      try {
-        parsedRaw = JSON.parse(responseObj.raw);
-      } catch (parseErr) {
-        console.warn('[WARN] Raw JSON string is malformed or cut off. Attempting repair...');
-        
-        let fixedString = responseObj.raw.trim();
-        const lastCompleteObjectIndex = fixedString.lastIndexOf('}');
-        
-        if (lastCompleteObjectIndex !== -1) {
-          fixedString = fixedString.substring(0, lastCompleteObjectIndex + 1);
+    try {
+        // Case 1: If the input itself is already the data object containing `node`
+        if (responseObj && Array.isArray(responseObj.node)) {
+            parsedRaw = responseObj;
         }
-        
-        fixedString += ']}';
-        parsedRaw = JSON.parse(fixedString);
-      }
-    }
-  } catch (err) {
-    console.error('[ERROR] Failed to parse raw data:', err.message);
-    parsedRaw = { node: [] };
-  }
+        // Case 2: If it's wrapped inside `responseObj.raw` as an object
+        else if (typeof responseObj?.raw === 'object' && responseObj.raw !== null) {
+            parsedRaw = responseObj.raw;
+        }
+        // Case 3: If it's wrapped as a JSON string in `responseObj.raw`
+        else if (typeof responseObj?.raw === 'string') {
+            try {
+                parsedRaw = JSON.parse(responseObj.raw);
+            } catch (parseErr) {
+                console.warn('[WARN] Raw JSON string is malformed or cut off. Attempting repair...');
 
-  return {
-    status: responseObj?.status || 'success',
-    raw: parsedRaw
-  };
+                let fixedString = responseObj.raw.trim();
+                const lastCompleteObjectIndex = fixedString.lastIndexOf('}');
+
+                if (lastCompleteObjectIndex !== -1) {
+                    fixedString = fixedString.substring(0, lastCompleteObjectIndex + 1);
+                }
+
+                fixedString += ']}';
+                parsedRaw = JSON.parse(fixedString);
+            }
+        }
+    } catch (err) {
+        console.error('[ERROR] Failed to parse raw data:', err.message);
+        parsedRaw = { node: [] };
+    }
+
+    return {
+        status: responseObj?.status || 'success',
+        raw: parsedRaw
+    };
 }
 
 const parseAndCleanResponse = (responseText) => {
     try {
-      // Step 1: Parse the outer JSON structure
+        // Step 1: Parse the outer JSON structure
 
-      console.log("parseAndCleanResponse > responseText > ", responseText);
-      let parsed = JSON.parse(responseText);
+        console.log("parseAndCleanResponse > responseText > ", responseText);
+        let parsed = JSON.parse(responseText);
 
-      // Step 2: If the 'raw' property is a stringified JSON, parse it too
-      if (parsed && typeof parsed.raw === 'string') {
-        try {
-          parsed.raw = JSON.parse(parsed.raw);
-        } catch (innerError) {
-          console.warn('[WARNING] Inner "raw" JSON failed to parse (possibly truncated):', innerError.message);
+        // Step 2: If the 'raw' property is a stringified JSON, parse it too
+        if (parsed && typeof parsed.raw === 'string') {
+            try {
+                parsed.raw = JSON.parse(parsed.raw);
+            } catch (innerError) {
+                console.warn('[WARNING] Inner "raw" JSON failed to parse (possibly truncated):', innerError.message);
 
-          // Optional Fallback: Clean stray slashes if the inner string is malformed
-          const cleanedRawString = parsed.raw
-            .replace(/\\"/g, '"')
-            .replace(/\\\\/g, '\\');
+                // Optional Fallback: Clean stray slashes if the inner string is malformed
+                const cleanedRawString = parsed.raw
+                    .replace(/\\"/g, '"')
+                    .replace(/\\\\/g, '\\');
 
-          try {
-            parsed.raw = JSON.parse(cleanedRawString);
-          } catch (fallbackError) {
-            // If it's truncated (like your example ending in timestamp:\"20), 
-            // you can keep it as a raw string or handle the truncation gracefully.
-            console.error('[ERROR] Fallback parse failed:', fallbackError.message);
-          }
+                try {
+                    parsed.raw = JSON.parse(cleanedRawString);
+                } catch (fallbackError) {
+                    // If it's truncated (like your example ending in timestamp:\"20), 
+                    // you can keep it as a raw string or handle the truncation gracefully.
+                    console.error('[ERROR] Fallback parse failed:', fallbackError.message);
+                }
+            }
         }
-      }
 
-      return parsed;
+        return parsed;
     } catch (err) {
-      console.error('[CRITICAL PARSE ERROR]:', err.message);
-      return null;
+        console.error('[CRITICAL PARSE ERROR]:', err.message);
+        return null;
     }
-  }
+}
 
 /**
  * Registers chat users by fetching records from the query object API
@@ -445,6 +445,6 @@ app.get('/api/loadChatUser', async (req, res) => {
     }
 });
 
-app.listen(API_PORT,'0.0.0.0', () => {
+app.listen(API_PORT, '0.0.0.0', () => {
     console.log(`[Chat API Gateway] Running on http://localhost:${API_PORT}`);
 });

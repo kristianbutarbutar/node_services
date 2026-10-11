@@ -6,6 +6,7 @@ const api_3004 = 'http://localhost:3004';
 const api_3006 = 'http://localhost:3006';
 const front_end = 'http://localhost';
 const voice_server = '127.0.0.1';
+const chat_server = '127.0.0.1';
 const token_server = '127.0.0.1';
 
 module.exports = {
@@ -17,5 +18,6 @@ module.exports = {
     api_3006,
     voice_server,
     token_server,
-    front_end
+    front_end,
+    chat_server
 }
