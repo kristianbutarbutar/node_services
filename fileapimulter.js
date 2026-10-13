@@ -65,6 +65,7 @@ app.use(express.json({ limit: '100mb' }));
 app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 // Directory Resolution
+//const configuredBasePath = '/mnt/disks/my-bucket';
 const configuredBasePath = '/Users/admin/Documents/gemini_src_dev_react';
 const uploadBase = fs.existsSync(configuredBasePath)
   ? configuredBasePath

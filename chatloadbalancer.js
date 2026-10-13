@@ -1,4 +1,5 @@
 const http = require('http');
+const ip_api = require('./host');
 
 // Global process error handlers to prevent sudden background crashes
 process.on('uncaughtException', (err) => {
@@ -11,9 +12,8 @@ process.on('unhandledRejection', (reason, promise) => {
 
 // Define your backend API service instances
 const backendServers = [
-    { host: 'localhost', port: 3031 },
-    { host: 'localhost', port: 3032 },
-    { host: 'localhost', port: 3033 }
+    { host: ip_api.chatapi3031, port: 3031 },
+    { host: ip_api.chatapi3032, port: 3032 },
 ];
 
 let currentIndex = 0;
@@ -55,6 +55,6 @@ const server = http.createServer((req, res) => {
 });
 
 const PORT = 3003;
-server.listen(PORT, '0.0.0.0', () => {
+server.listen(PORT, () => {
     console.log(`API Load Balancer running on port ${PORT}`);
 });

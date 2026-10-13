@@ -17,7 +17,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://127.0.0.1:5173',
   'http://localhost:3000',
-  'http://127.0.0.1:3000','http://amgreat.id','https://amgreat.id', `${ip_api.api_3000}`, `${ip_api.front_end}`
+  'http://127.0.0.1:3000', 'http://amgreat.id', 'https://amgreat.id', `${ip_api.api_3000}`, `${ip_api.front_end}`
 ];
 
 app.use(cors({
@@ -92,9 +92,9 @@ app.post('/api/query-object', async (req, res) => {
     //console.log("/api/query-object payload ", JSON.stringify(req.body));
     const result = await calldbapi.queryObject(tableName, whereClause, filterColumns);
     //console.log("/api/query-object result ", JSON.stringify(result));
-    if(noOfRow && noOfRow > 0 && result && result.data && result.data.length > noOfRow) {
-        const sliceData = result.data.slice(0, noOfRow);
-        result.data = sliceData;
+    if (noOfRow && noOfRow > 0 && result && result.data && result.data.length > noOfRow) {
+      const sliceData = result.data.slice(0, noOfRow);
+      result.data = sliceData;
     }
     res.status(result.success ? 200 : 400).json(result);
   } catch (err) {
@@ -143,13 +143,13 @@ app.post('/api/query-object-in-table', async (req, res) => {
 });
 
 const overrideMandatoryColumns = (formData) => {
-        formData.columns.some(col => {
-        const name = col.col_name;
-        if(name && String(name).toLowerCase() === 'createdby'){
-            col.value = 'TEST';
-        }
-      });
-      return formData;
+  formData.columns.some(col => {
+    const name = col.col_name;
+    if (name && String(name).toLowerCase() === 'createdby') {
+      col.value = 'TEST';
+    }
+  });
+  return formData;
 }
 
 /**
@@ -300,8 +300,8 @@ app.post('/api/delete', async (req, res) => {
 });
 
 // Start Express HTTP Server
-app.listen(PORT, () => {
-//app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, '0.0.0.0', () => {
+  //app.listen(PORT, '0.0.0.0', () => {
   console.log(`🛡️  Secure DB API Server running on http://localhost:${PORT}`);
   console.log(`📡 CORS allowed for: ${allowedOrigins.join(', ')}`);
 });

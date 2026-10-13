@@ -1,13 +1,16 @@
-const api_3000 = 'http://localhost:3000';
-const api_3001 = 'http://localhost:3001';
-const api_3002 = 'http://localhost:3002';
-const api_3003 = 'http://localhost:3003';
-const api_3004 = 'http://localhost:3004';
-const api_3006 = 'http://localhost:3006';
+const api_3000 = 'http://localhost:3000'; // dbapi.js
+const api_3001 = 'http://localhost:3001'; // utilapi.js
+const api_3002 = 'http://localhost:3002'; // fileapimulter.js
+const api_3003 = 'http://localhost:3003'; // chatloadbalancer.js
+const api_3004 = 'http://localhost:3004'; // chatwebshocket.js
+const api_3006 = 'http://localhost:3006'; // voice_bridge.js
 const front_end = 'http://localhost';
 const voice_server = '127.0.0.1';
 const chat_server = '127.0.0.1';
 const token_server = '127.0.0.1';
+const chatapi3031 = 'localhost';
+const chatapi3032 = 'localhost';
+const chatapi3033 = '127.0.0.1';
 
 module.exports = {
     api_3000,
@@ -19,5 +22,8 @@ module.exports = {
     voice_server,
     token_server,
     front_end,
-    chat_server
+    chat_server,
+    chatapi3031,
+    chatapi3032,
+    chatapi3033
 }

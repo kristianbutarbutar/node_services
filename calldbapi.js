@@ -157,7 +157,6 @@ async function getTableColumns(v_table_name, filterColumns = []) {
       { value: v_table_name, type: "VARCHAR" }
     ]
   };
-  console.log("getTableColumns > ", JSON.stringify(queryPayload));
   const rawResult = await dbEngine.executeQuery(queryPayload);
 
   return {
