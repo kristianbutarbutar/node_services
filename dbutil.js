@@ -190,7 +190,7 @@ async function getListForColumnId(input) {
   try { //'http://localhost:3000/api/query-object'
 
     console.log("queryPayload > ", JSON.stringify(queryPayload));
-    console.log(`${ip_api.api_3000}/api/query`);
+    //console.log(`${ip_api.api_3000}/api/query`);
 
     const mapResult = await fetch(`${ip_api.api_3000}/api/query`, {
       method: 'POST',
@@ -202,7 +202,7 @@ async function getListForColumnId(input) {
 
     const data = await mapResult.json();
 
-    console.log("Result Data > ", JSON.stringify(data));
+    //console.log("Result Data > ", JSON.stringify(data));
 
     if (!data.success) {
       return {

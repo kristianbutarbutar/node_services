@@ -99,7 +99,7 @@ async function executeSql(sql, params = []) {
 async function executeQuery(jsonInput) {
   try {
 
-    console.log("??executeQuery > jsonInput > ", JSON.stringify(jsonInput));
+    //console.log("??executeQuery > jsonInput > ", JSON.stringify(jsonInput));
 
     let { sql, params = [], whereClause = [] } = jsonInput;
 
@@ -123,12 +123,12 @@ async function executeQuery(jsonInput) {
 
     const typedParams = params.map(p => convertDataType(p.value, p.type));
 
-    console.log("??executeQuery > sql > ", sql);
-    console.log("??executeQuery > typedParams > ", JSON.stringify(typedParams));
+    //console.log("??executeQuery > sql > ", sql);
+    //console.log("??executeQuery > typedParams > ", JSON.stringify(typedParams));
 
     const result = await executeSql(sql, typedParams);
 
-    console.log("??executeQuery > result > ", JSON.stringify(result));
+    //console.log("??executeQuery > result > ", JSON.stringify(result));
 
     return {
       success: true,
@@ -136,7 +136,7 @@ async function executeQuery(jsonInput) {
       data: result.rows
     };
   } catch (err) {
-    console.log("??executeQuery > err > ", JSON.stringify(err));
+    //console.log("??executeQuery > err > ", JSON.stringify(err));
     return { success: false, error: err.message };
   }
 }
