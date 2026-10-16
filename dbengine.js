@@ -98,6 +98,9 @@ async function executeSql(sql, params = []) {
  */
 async function executeQuery(jsonInput) {
   try {
+
+    console.log("??executeQuery > jsonInput > ", JSON.stringify(jsonInput));
+
     let { sql, params = [], whereClause = [] } = jsonInput;
 
     const activeWhereClause = whereClause.length > 0
@@ -121,6 +124,7 @@ async function executeQuery(jsonInput) {
     const typedParams = params.map(p => convertDataType(p.value, p.type));
 
     console.log("??executeQuery > sql > ", sql);
+    console.log("??executeQuery > typedParams > ", JSON.stringify(typedParams));
 
     const result = await executeSql(sql, typedParams);
 
@@ -132,6 +136,7 @@ async function executeQuery(jsonInput) {
       data: result.rows
     };
   } catch (err) {
+    console.log("??executeQuery > err > ", JSON.stringify(err));
     return { success: false, error: err.message };
   }
 }

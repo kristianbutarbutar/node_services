@@ -125,14 +125,34 @@ async function getList(input) {
     ]
   };
 
-  const response = await calldbapi.executeQuery(queryPayload);
-  console.log("getList > queryPayload > ", JSON.stringify(queryPayload));
-  console.log("getList > response ", JSON.stringify(response));
+  //const response = await calldbapi.executeQuery(queryPayload);
 
-  return {
-    ...response,
-    sessionid
-  };
+  try { //'http://localhost:3000/api/query-object'
+    const response = await fetch(`${ip_api.api_3000}/api/query`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(payload)
+    });
+
+    const data = await response.json();
+
+    return {
+      ...data,
+      sessionid
+    };
+
+  } catch (err) {
+    return {
+      success: false,
+      sessionid,
+      data: [],
+      count: 0,
+      error: `Failed to call getList: ${err.message}`
+    };
+  }
+
 }
 
 /**
@@ -164,73 +184,98 @@ async function getListForColumnId(input) {
     ]
   };
 
-  const mapResult = await calldbapi.executeQuery(queryPayload);
+  //const mapResult = await calldbapi.executeQuery(queryPayload);
   //console.log("getListForColumnId > mapResult > ", JSON.stringify(mapResult));
 
-  if (!mapResult.success) {
-    return {
-      success: false,
-      sessionid,
-      data: [],
-      count: 0,
-      error: mapResult.error || "Failed to query t_col_list_map"
-    };
-  }
+  try { //'http://localhost:3000/api/query-object'
 
-  const records = mapResult.data || [];
-  if (records.length === 0) {
-    return {
-      success: false,
-      sessionid,
-      data: [],
-      count: 0,
-      error: `No mapping found in t_col_list_map for col_id '${col_id}'`
-    };
-  }
+    console.log("queryPayload > ", JSON.stringify(queryPayload));
+    console.log(`${ip_api.api_3000}/api/query`);
 
-  const listGroupId = (records[0].list_group_id || '').trim();
-  const sqlList = (records[0].sql || '').trim();
+    const mapResult = await fetch(`${ip_api.api_3000}/api/query`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(queryPayload)
+    });
 
-  let listResponse;
+    const data = await mapResult.json();
 
-  // 2. Fetch via list_group_id from t_group_members
-  if (listGroupId.length > 0) {
-    listResponse = await getList({ groupid: listGroupId, sessionid });
-  }
-  // 3. Fallback: Fetch via direct or JSON-formatted SQL statement
-  else if (sqlList.length > 0) {
-    try {
-      if (sqlList.startsWith('{') && sqlList.endsWith('}')) {
+    console.log("Result Data > ", JSON.stringify(data));
 
-        //console.log("getListForColumnId > before > sqlList > ", sqlList);
-
-        listResponse = await getObject(JSON.parse(sqlList));
-
-        //console.log("getListForColumnId > after > sqlList > listResponse > ", JSON.stringify(listResponse));
-      }
-    } catch (parseErr) {
+    if (!data.success) {
       return {
         success: false,
         sessionid,
         data: [],
         count: 0,
-        error: `Failed to execute custom SQL for col_id '${col_id}': ${parseErr.message}`
+        error: data.error || "Failed to query t_col_list_map"
       };
     }
-  } else {
+
+    const records = data.data || [];
+
+    if (records.length === 0) {
+      return {
+        success: false,
+        sessionid,
+        data: [],
+        count: 0,
+        error: `No mapping found in t_col_list_map for col_id '${col_id}'`
+      };
+    }
+
+    const listGroupId = (records[0].list_group_id || '').trim();
+    const sqlList = (records[0].sql || '').trim();
+
+    let listResponse;
+
+    // 2. Fetch via list_group_id from t_group_members
+    if (listGroupId.length > 0) {
+      listResponse = await getList({ groupid: listGroupId, sessionid });
+    }
+    // 3. Fallback: Fetch via direct or JSON-formatted SQL statement
+    else if (sqlList.length > 0) {
+      try {
+        if (sqlList.startsWith('{') && sqlList.endsWith('}')) {
+
+          listResponse = await getObject(JSON.parse(sqlList));
+        }
+      } catch (parseErr) {
+        return {
+          success: false,
+          sessionid,
+          data: [],
+          count: 0,
+          error: `Failed to execute custom SQL for col_id '${col_id}': ${parseErr.message}`
+        };
+      }
+    } else {
+      return {
+        success: false,
+        sessionid,
+        data: [],
+        count: 0,
+        error: `Neither 'list_group_id' nor 'sql' defined for col_id '${col_id}' in t_col_list_map`
+      };
+    }
+
+    return {
+      ...listResponse,
+      sessionid
+    };
+
+  } catch (err) {
     return {
       success: false,
       sessionid,
       data: [],
       count: 0,
-      error: `Neither 'list_group_id' nor 'sql' defined for col_id '${col_id}' in t_col_list_map`
+      error: `Failed to call getListForColumnId: ${err.message}`
     };
   }
 
-  return {
-    ...listResponse,
-    sessionid
-  };
 }
 
 module.exports = {
