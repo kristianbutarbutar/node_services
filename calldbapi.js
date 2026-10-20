@@ -1,5 +1,8 @@
 const crypto = require('crypto');
 const dbEngine = require('./dbengine');
+const { validateValue } = require('./validation');
+const { createasymetrickey, encryptText, decryptText } = require('./cryptoUtil');
+const ip_api = require('./host');
 
 /**
  * Generates and returns a 45-character unique string.
@@ -9,6 +12,131 @@ const dbEngine = require('./dbengine');
 function getUUID() {
   //return crypto.randomBytes(32).toString('hex').substring(0, 45);
   return crypto.randomUUID();
+}
+
+/**
+ * Generates common response header metadata for API responses.
+ * 
+ * @param {Object} params
+ * @param {string} [params.uid=''] - User ID associated with the session.
+ * @returns {Object} Standardized response header object containing session, token, and rbac details.
+ */
+function genResponseHeader({ uid = '' } = {}) {
+  const sessionid = getUUID();
+  const token = crypto.randomBytes(32).toString('hex');
+  return {
+    'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate',
+    'X-Content-Type-Options': 'nosniff',
+    'Access-Control-Allow-Origin': `${ip_api.front_end}`,
+    'X-Session-Token': sessionid,
+    token: token,
+    objectrbac: [],
+    timestamp: new Date().toISOString()
+  };
+}
+
+/**
+ * Helper to format a Date object to 'YYYY-MM-DD HH24:MI:SS' string.
+ * 
+ * @param {Date} date 
+ * @returns {string}
+ */
+function formatDateToSQLTimestamp(date) {
+  const pad = (num) => String(num).padStart(2, '0');
+  const YYYY = date.getFullYear();
+  const MM = pad(date.getMonth() + 1);
+  const DD = pad(date.getDate());
+  const HH = pad(date.getHours());
+  const MI = pad(date.getMinutes());
+  const SS = pad(date.getSeconds());
+  return `${YYYY}-${MM}-${DD} ${HH}:${MI}:${SS}`;
+}
+
+/**
+ * Calculates remaining session duration in minutes (positive or negative).
+ * 
+ * @param {string} sessionid - The record ID of the session.
+ * @returns {Promise<number|null>} Returns remaining time in minutes, or null if session record is missing.
+ */
+async function getSessionDue(sessionid) {
+  const sessionTableId = "b29dfab7-7702-494b-af1e-8842f1be6dcb";
+  const whereClause = [{ col_name: 'sessionid', value: sessionid }];
+  const filterColumns = ["id", "starttimestamp", "duetimestamp"];
+
+  const ressession = await queryObject(sessionTableId, whereClause, filterColumns);
+
+  if (ressession && Array.isArray(ressession.data) && ressession.data.length > 0) {
+    const rawDueTimestamp = ressession.data[0].duetimestamp;
+
+    const now = new Date();
+    const currenttimestampStr = formatDateToSQLTimestamp(now);
+
+    const dueMs = new Date(rawDueTimestamp).getTime();
+    const currentMs = new Date(currenttimestampStr).getTime();
+
+    // Difference in minutes (can be positive or negative)
+    const duemin = (dueMs - currentMs) / (1000 * 60);
+
+    return duemin;
+  }
+
+  return null;
+}
+
+/**
+ * Generates a session header, creates a session record in t_session table, and returns session details.
+ * 
+ * @param {string|Object} uid - User ID string or payload object containing uid.
+ * @param {number} [expireMinutes=5] - Configurable expiration window in minutes.
+ * @returns {Promise<Object>} Returns { sessionid, id, duetimestamp }
+ */
+async function genSession(uid, expireMinutes = 5) {
+  const userId = uid ? uid : "";
+  const header = genResponseHeader({ uid: userId });
+
+  const now = new Date();
+  const currenttimestamp = formatDateToSQLTimestamp(now);
+
+  const due = new Date(now.getTime() + expireMinutes * 60 * 1000);
+  const duetimestamp = formatDateToSQLTimestamp(due);
+
+  const sessionTableId = 'b29dfab7-7702-494b-af1e-8842f1be6dcb';
+  const columnsJson = await getTableColumns(sessionTableId, []);
+
+  let saveResult = { id: null };
+
+  if (columnsJson && Array.isArray(columnsJson.columns) && columnsJson.columns.length > 0) {
+    const formData = columnsJson.columns.map(col => {
+      const colNameLower = String(col.col_name).toLowerCase();
+      let val = '';
+
+      if (colNameLower === 'session' || colNameLower === 'sessionid') {
+        val = header['X-Session-Token'];
+      } else if (colNameLower === 'starttimestamp') {
+        val = currenttimestamp;
+      } else if (colNameLower === 'duetimestamp') {
+        val = duetimestamp;
+      }
+
+      return {
+        col_name: col.col_name,
+        value: val
+      };
+    });
+    
+    console.log("before saveForm > ", JSON.stringify(formData));
+
+    saveResult = await saveForm({
+      objectid: sessionTableId,
+      columns: formData
+    });
+  }
+  console.log("genSession finale > ", header['X-Session-Token']);
+  return {
+    sessionid: header['X-Session-Token'],
+    id: saveResult.id || null,
+    duetimestamp: duetimestamp
+  };
 }
 
 /**
@@ -135,13 +263,6 @@ function convertArrayToHtmlTable(data, row_start = 1, row_end = null) {
   return html;
 }
 
-/**
- * Fetches column definitions for a given table name from t_t_cols_def.
- * 
- * @param {string} v_table_name - The table name to filter by pid.
- * @param {Array<string>} [filterColumns=[]] - Optional list of column names to restrict metadata selection.
- * @returns {Promise<Object>} Formatted JSON object containing column records.
- */
 async function getTableColumns(v_table_name, filterColumns = []) {
 
   let inColumns = "";
@@ -157,11 +278,89 @@ async function getTableColumns(v_table_name, filterColumns = []) {
       { value: v_table_name, type: "VARCHAR" }
     ]
   };
+
   const rawResult = await dbEngine.executeQuery(queryPayload);
 
   return {
     success: rawResult.success,
     tableName: v_table_name,
+    columns: rawResult.success ? (rawResult.data || []) : [],
+    count: rawResult.success ? (rawResult.count || 0) : 0,
+    error: rawResult.error || null
+  };
+}
+
+/**
+ * Fetches column definitions for a given table name from t_t_cols_def.
+ * Automatically checks for 'password' html_type columns, creates asymmetric keys, and saves key data.
+ * 
+ * @param {string} v_table_name - The table name to filter by pid.
+ * @param {Array<string>} [filterColumns=[]] - Optional list of column names to restrict metadata selection.
+ * @returns {Promise<Object>} Formatted JSON object containing column records.
+ */
+async function getTableColumnsForForm(v_object_id, filterColumns = [], sessionid) {
+
+  if (!sessionid) return;
+
+  let inColumns = "";
+
+  if (Array.isArray(filterColumns) && filterColumns.length > 0) {
+    inColumns = filterColumns.join("','");
+    inColumns = " and lower(col_name) in ('" + inColumns + "')";
+  }
+
+  const queryPayload = {
+    sql: "SELECT * FROM t_t_cols_def WHERE pid = $1" + inColumns + " order by seq asc",
+    params: [
+      { value: v_object_id, type: "VARCHAR" }
+    ]
+  };
+  const rawResult = await dbEngine.executeQuery(queryPayload);
+
+  if (rawResult.success && Array.isArray(rawResult.data) && rawResult.data.length > 0) {
+    
+    console.log("getTableColumnsForForm > 1 > ");
+
+    for (const item of rawResult.data) {
+      if (item.html_type && String(item.html_type).toLowerCase() === 'password') {
+        
+        const respkeys = createasymetrickey();
+
+        if (respkeys && (respkeys.private || respkeys.public)) {
+          const keysTableId = '45d9f34f-7dc0-41c4-b519-8639ffd5b290';
+          const columnsJson = await getTableColumns(keysTableId, []);
+
+          if (columnsJson && Array.isArray(columnsJson.columns) && columnsJson.columns.length > 0) {
+            const formDataColumns = [];
+
+            for (const col of columnsJson.columns) {
+              if (col.col_name === 'private_key') {
+                formDataColumns.push({ col_name: 'private_key', value: respkeys.private });
+              } else if (col.col_name === 'public_key') {
+                formDataColumns.push({ col_name: 'public_key', value: respkeys.public });
+              } else if (col.col_name === 'pid') {
+                formDataColumns.push({ col_name: 'pid', value: sessionid });
+              } else {
+                formDataColumns.push({ col_name: col.col_name, value: '' });
+              }
+            }
+
+            await saveForm({
+              objectid: keysTableId,
+              columns: formDataColumns
+            });
+          }
+        }
+        item.def_val = respkeys.public;
+      }
+      console.log("getTableColumnsForForm > 2 > ", JSON.stringify(item));
+    }
+  }
+  console.log("getTableColumnsForForm > 3 > ");
+
+  return {
+    success: rawResult.success,
+    tableName: v_object_id,
     columns: rawResult.success ? (rawResult.data || []) : [],
     count: rawResult.success ? (rawResult.count || 0) : 0,
     error: rawResult.error || null
@@ -491,7 +690,6 @@ async function executeQuery(jsonInput) {
 async function queryObject(tableName, whereClause = [], filterColumns = []) {
   const columnsJson = await getTableColumns(tableName, filterColumns);
   const tableDBName = await getTableName({ id: tableName });
-
   columnsJson.tableName = tableDBName.tablename;
   const queryPayload = __QGenerator(columnsJson, whereClause);
 
@@ -596,12 +794,12 @@ async function executeInsert(jsonInput) {
 }
 
 /**
- * Automatically fetches table metadata, builds an INSERT query payload via __IGenerator,
- * overrides the value for attribute 'id' in the params array with getUUID(),
- * and executes the insert.
+ * Automatically fetches table metadata, validates form field values against metadata validateValue regex,
+ * builds an INSERT query payload via __IGenerator, overrides the value for attribute 'id' in the params array
+ * with getUUID(), and executes the insert.
  * 
  * @param {Object} formData - Input JSON { objectid: 'tableName', columns: [{ col_name: '', value: '', type: '' }] }
- * @returns {Promise<Object>} Execution result returned from executeInsert().
+ * @returns {Promise<Object>} Execution result returned from executeInsert() or validation failure response.
  */
 async function saveForm(formData) {
   try {
@@ -626,6 +824,18 @@ async function saveForm(formData) {
     }
 
     const colsJson = await getTableColumns(objectid);
+
+    const validationResult = validateValue({
+      fieldsValue: formData?.columns || [],
+      cols: colsJson?.columns || []
+    });
+
+    if (validationResult !== 'valid') {
+      return {
+        success: false,
+        error: validationResult
+      };
+    }
 
     const tableDBName = await getTableName({ id: objectid });
     colsJson.tableName = tableDBName.tablename;
@@ -658,8 +868,6 @@ async function saveForm(formData) {
     };
   }
 }
-
-
 
 /**
  * Wrapper for UPDATE operations
@@ -799,12 +1007,12 @@ async function dropObjectItems(input) {
 }
 
 /**
- * Fetches table column definitions, constructs an UPDATE SQL statement excluding
- * ('id', 'pid', 'createby', 'createddate'), executes it via dbEngine.executeUpdate,
- * and returns the execution result with sessionid.
+ * Fetches table column definitions, validates form field values against metadata validateValue regex,
+ * constructs an UPDATE SQL statement excluding ('id', 'pid', 'createby', 'createddate'), executes it via
+ * dbEngine.executeUpdate, and returns the execution result with sessionid.
  * 
  * @param {Object} input - Input JSON { tableName: '', recordid: '', columns: [{ col_id: '', col_name: '', value: '' }], sessionid: '' }
- * @returns {Promise<Object>} Execution result JSON from dbEngine.executeUpdate() with sessionid.
+ * @returns {Promise<Object>} Execution result JSON from dbEngine.executeUpdate() with sessionid or validation failure response.
  */
 async function updateObject(input) {
   try {
@@ -838,6 +1046,20 @@ async function updateObject(input) {
     }
 
     const colsJson = await getTableColumns(tableName);
+
+    const validationResult = validateValue({
+      fieldsValue: inputCols,
+      cols: colsJson?.columns || []
+    });
+
+    if (validationResult !== 'valid') {
+      return {
+        success: false,
+        sessionid: sessionid,
+        error: validationResult
+      };
+    }
+
     const tableDBName = await getTableName({ id: tableName });
     const metadataCols = (colsJson && Array.isArray(colsJson.columns)) ? colsJson.columns : [];
 
@@ -962,6 +1184,9 @@ if (require.main === module) {
 
 module.exports = {
   getUUID,
+  genResponseHeader,
+  genSession,
+  getSessionDue,
   getTableName,
   getTableColumns,
   __QGenerator,
@@ -977,5 +1202,6 @@ module.exports = {
   executeDelete,
   dropObject,
   dropObjectItems,
-  updateObject
+  updateObject,
+  getTableColumnsForForm
 };

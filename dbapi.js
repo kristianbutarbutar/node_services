@@ -14,9 +14,7 @@ app.use(helmet({
 
 // CORS Middleware - Configured for Vite (5173) and local client/server (3000)
 const allowedOrigins = [
-  'http://localhost:5173',
-  'http://127.0.0.1:5173',
-  'http://localhost:3000',
+  'http://localhost:5173','http://127.0.0.1:5173', 'http://localhost:3000',
   'http://127.0.0.1:3000', 'http://amgreat.id', 'https://amgreat.id', `${ip_api.api_3000}`, `${ip_api.front_end}`
 ];
 
@@ -89,9 +87,9 @@ app.post('/api/query-object', async (req, res) => {
         error: "Invalid parameter 'whereClause'. It must be an array of condition objects."
       });
     }
-    //console.log("/api/query-object payload ", JSON.stringify(req.body));
+
     const result = await calldbapi.queryObject(tableName, whereClause, filterColumns);
-    //console.log("/api/query-object result ", JSON.stringify(result));
+
     if (noOfRow && noOfRow > 0 && result && result.data && result.data.length > noOfRow) {
       const sliceData = result.data.slice(0, noOfRow);
       result.data = sliceData;
@@ -130,9 +128,6 @@ app.post('/api/query-object-in-table', async (req, res) => {
 
     const result = await calldbapi.queryObjectInTable(tableName, whereClause, row_start, row_end);
 
-    //console.log("/api/query-object-in-table Request: table: ", tableName, ", whereClause", JSON.stringify(whereClause));
-    //console.log("/api/query-object-in-table Result: ", JSON.stringify(result));
-
     if (res !== undefined && !res.success) {
       res.status(result.success ? 200 : 400).json(result);
     }
@@ -158,31 +153,58 @@ const overrideMandatoryColumns = (formData) => {
  * execute it, and return a JSON payload with the execution result and sessionid.
  */
 app.post('/api/save-object', async (req, res) => {
+  
+  const __sessionid = req.headers['X-Session-Token'] || req.headers['x-session-token'] || "";
+
   try {
+    
     const objectid = req.body.objectid || req.body.tableName;
+    
+    console.log("__sessionid > ", __sessionid);
+    console.log("objectid > ", objectid);
+
+    if (!__sessionid) {
+      return res.status(400).json({
+        success: false,
+        sessionid: req.body.sessionid || '',
+        error: "Session was expired, record was not processed. please reload for reauthenticate for new session."
+      });
+
+    } else if (__sessionid && __sessionid.toUpperCase() === 'GUEST_CHAT_TOKEN' && objectid === 'PORTAL_USER_FORM_ID') {
+        console.log("session is ok");
+    } else {
+      const __duemin = await calldbapi.getSessionDue(__sessionid);
+      if (__duemin <= 0) {
+        return res.status(400).json({
+          success: false,
+          sessionid: __sessionid || '',
+          error: "Form's session was due, please reload for reauthenticate for new session."
+        });
+      }
+
+    }
 
     if (!objectid) {
       return res.status(400).json({
         success: false,
-        sessionid: req.body.sessionid || '',
+        sessionid: __sessionid || '',
         error: "Missing required parameter 'objectid' in JSON body."
       });
     }
-    //console.log("API Save Object => ", JSON.stringify(req.body));
-    const saveResult = await calldbapi.saveForm(overrideMandatoryColumns(req.body));
 
-    const sessionid = req.body.sessionid || req.headers['x-session-id'] || '';
+    const saveResult = await calldbapi.saveForm(overrideMandatoryColumns(req.body));
 
     const responsePayload = {
       ...saveResult,
-      sessionid: sessionid
+      sessionid: __sessionid
     };
 
     res.status(saveResult.success ? 200 : 400).json(responsePayload);
+
   } catch (err) {
     res.status(500).json({
       success: false,
-      sessionid: req.body.sessionid || '',
+      sessionid: __sessionid || '',
       error: err.message
     });
   }
@@ -193,7 +215,43 @@ app.post('/api/save-object', async (req, res) => {
  * Accepts JSON payload { tableName, recordid, sessionid } and calls calldbapi.dropObject()
  */
 app.post('/api/drop-object', async (req, res) => {
+
+  const __sessionid = req.headers['x-session-token'] || req.headers['X-Session-Token'] || "";
+
   try {
+
+    if (!__sessionid) {
+
+      return res.status(400).json({
+        success: false,
+        sessionid: req.body.sessionid || '',
+        error: "Session was expired, record was not processed. please reload for reauthenticate for new session."
+      });
+
+    } else {
+
+      const __duemin = await calldbapi.getSessionDue(__sessionid);
+
+      if (__duemin <= 0) {
+        return res.status(400).json({
+          success: false,
+          sessionid: __sessionid || '',
+          error: "Form's session was due, please reload for reauthenticate for new session."
+        });
+      }
+
+    }
+
+    const objectid = req.body.objectid || req.body.tableName;
+
+    if (!objectid) {
+      return res.status(400).json({
+        success: false,
+        sessionid: req.body.sessionid || '',
+        error: "Missing required parameter Object ID."
+      });
+    }
+
     const result = await calldbapi.dropObject(req.body);
     res.status(result.success ? 200 : 400).json(result);
   } catch (err) {
@@ -235,7 +293,43 @@ app.post('/api/drop', async (req, res) => {
  * Accepts JSON payload { tableName, recordid, columns, sessionid } and calls calldbapi.updateObject()
  */
 app.post('/api/update-object', async (req, res) => {
+
+  const __sessionid = req.headers['x-session-token'] || req.headers['X-Session-Token'] || "";
+
   try {
+
+    if (!__sessionid) {
+
+      return res.status(400).json({
+        success: false,
+        sessionid: req.body.sessionid || '',
+        error: "Session was expired, record was not processed. please reload for reauthenticate for new session."
+      });
+
+    } else {
+
+      const __duemin = await calldbapi.getSessionDue(__sessionid);
+
+      if (__duemin <= 0) {
+        return res.status(400).json({
+          success: false,
+          sessionid: __sessionid || '',
+          error: "Form's session was due, please reload for reauthenticate for new session."
+        });
+      }
+
+    }
+
+    const objectid = req.body.objectid || req.body.tableName;
+
+    if (!objectid) {
+      return res.status(400).json({
+        success: false,
+        sessionid: req.body.sessionid || '',
+        error: "Missing required parameter Object ID."
+      });
+    }
+
     const result = await calldbapi.updateObject(req.body);
     res.status(result.success ? 200 : 400).json(result);
   } catch (err) {

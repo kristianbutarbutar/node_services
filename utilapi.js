@@ -100,19 +100,59 @@ app.post('/api/colList', async (req, res) => {
  * POST /api/get-object-schema
  */
 app.post('/api/get-object-schema', async (req, res) => {
+
   try {
+    const __uid = req.headers['uid'] ? req.headers['uid'] : "UID";
+    const __header = calldbapi.genResponseHeader({ uid: __uid });
+
+    res.set(__header);
+
     const objectid = req.body.objectid || req.body.tableName;
+    const filterColumns = req.body.filterColumns || [];
+    const dmlForm = req.body.src || "";
+
     if (!objectid) {
       return res.status(400).json({
         success: false,
         error: "Missing required parameter 'objectid' in JSON body."
       });
     }
-    const result = await calldbapi.getTableColumns(objectid);
+
+    let result = {};
+
+    
+    if (!dmlForm) {
+      
+      console.log("dmlForm > 1 ");
+      
+      result = await calldbapi.getTableColumns(objectid, filterColumns);
+
+    } else if (dmlForm) {
+
+      console.log("dmlForm > 2 ");
+
+      const __session = await calldbapi.genSession(__uid, expireMinutes = 5);
+
+      console.log("__session > ", JSON.stringify(__session));
+                
+      __header['X-Session-Token'] = __session.sessionid;
+
+      console.log("__header > ", JSON.stringify(__header));
+
+      res.set(__header);
+
+      console.log("generated session on response header > ", __session.sessionid);
+
+      result = await calldbapi.getTableColumnsForForm(objectid, filterColumns, __session.sessionid);
+
+    }
+
     res.status(result.success ? 200 : 400).json(result);
+
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
+
 });
 
 /**

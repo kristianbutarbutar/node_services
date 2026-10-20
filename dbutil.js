@@ -1,6 +1,7 @@
 const calldbapi = require('./calldbapi');
 const ip_api = require('./host');
 
+
 /**
  * Queries object records by sending a POST request to http://localhost:3000/api/query-object.
  * 
@@ -74,7 +75,7 @@ async function getObject(input) {
     sessionid
   };
 
-  try {//'http://localhost:3000/api/query-object'
+  try {
     const response = await fetch(`${ip_api.api_3000}/api/query-object`, {
       method: 'POST',
       headers: {

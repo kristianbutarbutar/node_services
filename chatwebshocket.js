@@ -79,6 +79,22 @@ wss.on('connection', (ws, req) => {
     connectedClients.set(uid, ws);
     console.log(`[WebSocket] Client connected and registered -> UID: ${uid}`);
 
+    // Send direct welcome message to newly connected user session ONLY if uid contains 'gues'
+    if (ws.readyState === WebSocket.OPEN && uid.toLowerCase().includes('gues')) {
+        const welcomePayload = {
+            node: [
+                {
+                    uid: 'System',
+                    message: 'welcome to amgreat.id chat room, this session is in queue. Agent will be joining soon, would you mind to share application id/ticket id/new subject to discuss?',
+                    timestamp: new Date().toISOString(),
+                    seqno: 1
+                }
+            ],
+            timestamp: new Date().toISOString()
+        };
+        ws.send(JSON.stringify(welcomePayload));
+    }
+
     ws.on('message', (msg) => {
         console.log(`[WebSocket] Message received from UID ${uid}:`, msg.toString());
         try {
