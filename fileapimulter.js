@@ -186,8 +186,6 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
     success: false
   };
 
-  //console.log("archieveUploadedFiles > received recorid = ", recordid);
-
   try {
     const payload1 = {
       objectid: htmleditor && htmleditor !== '' ? 'fdeb98a5-9217-482a-9f2d-051ebe5b7c59' : 'OBJ_UPLOADED_FORM_ID',
@@ -226,10 +224,7 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
           console.error('Error in archieveUploadedFiles 1111 :', err);
         }
         response1.id = __pid;
-        //console.log("archieveUploadedFiles > 2 ", response1.id, " > __pid = ", __pid, " > __result > ", JSON.stringify(__result));
       }
-
-      //console.log("archieveUploadedFiles > 3 ", response1.id, " > __pid = ", __pid);
 
       for (const file of savedFiles) {
         const payload2 = {
@@ -252,14 +247,13 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
           },
           body: JSON.stringify(payload2)
         });
-        //console.log("saved UPLOADED_FILES_FORM_ID > session id > ", sessionid );
 
         const response2 = await res2.json();
 
         results.fileResponses.push(response2);
       }
     }
-    
+
     results.success = true;
 
     results.id = response1.id;
@@ -397,6 +391,16 @@ app.post('/api/upload', async (req, res) => {
 
   const __sessionid = req.headers['X-Session-Token'] || req.headers['x-session-token'] || "";
 
+  if (!__sessionid) {
+    return res.status(400).json({
+      success: false,
+      status: 'false',
+      sessionid: null,
+      message: 'Session is not valid.',
+      files: []
+    });
+  }
+
   if (!Array.isArray(files) || files.length === 0) {
     return res.status(400).json({
       success: false,
@@ -466,13 +470,14 @@ app.post('/api/upload', async (req, res) => {
       });
     }
   }
+
   console.log("__sessionid > ", __sessionid);
 
   const isSuccess = savedFiles.length > 0;
   const archiveResult = await archieveUploadedFiles({
     savedFiles,
     isSuccess: isSuccess ? 'true' : 'false',
-    sessionid:__sessionid,
+    sessionid: __sessionid,
     htmleditor,
     recordid
   });
@@ -480,7 +485,7 @@ app.post('/api/upload', async (req, res) => {
   let gcpBucketResult = null;
   if (archiveResult && archiveResult.success && savedFiles.length > 0) {
     gcpBucketResult = await copyToGCPBucket({
-      sessionid:__sessionid,
+      sessionid: __sessionid,
       bucketName: GCP_BUCKET_NAME,
       destFolder: GCP_DEST_FOLDER,
       file: savedFiles.map((file) => ({
@@ -494,7 +499,7 @@ app.post('/api/upload', async (req, res) => {
   return res.status(isSuccess ? 200 : 400).json({
     success: isSuccess,
     status: isSuccess ? 'true' : 'false',
-    sessionid:__sessionid,
+    sessionid: __sessionid,
     message: message || (isSuccess ? `${savedFiles.length} file(s) processed successfully.` : 'File processing failed.'),
     id: isSuccess ? archiveResult.id : '',
     files: savedFiles,

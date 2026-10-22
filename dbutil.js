@@ -128,7 +128,7 @@ async function getList(input) {
 
   //const response = await calldbapi.executeQuery(queryPayload);
 
-  try { //'http://localhost:3000/api/query-object'
+  try { 
     const response = await fetch(`${ip_api.api_3000}/api/query`, {
       method: 'POST',
       headers: {
@@ -278,6 +278,7 @@ async function getListForColumnId(input) {
   }
 
 }
+
 
 module.exports = {
   getObjectRecords,
