@@ -11,6 +11,8 @@ const token_server = '127.0.0.1';
 const chatapi3031 = 'localhost';
 const chatapi3032 = 'localhost';
 const chatapi3033 = 'localhost';
+const configuredBasePath = '/mnt/disks/my-bucket';
+//const configuredBasePath = '/Users/admin/Documents/gemini_src_dev_react';
 
 module.exports = {
     api_3000,
@@ -25,5 +27,6 @@ module.exports = {
     chat_server,
     chatapi3031,
     chatapi3032,
-    chatapi3033
+    chatapi3033,
+    configuredBasePath
 }

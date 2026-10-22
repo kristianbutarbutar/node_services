@@ -361,3 +361,734 @@ socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a
 serverResponse >  { node: [] }
 serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
 chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3031
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3032
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}
+[WebSocket] Message received from UID 71d563a0-ef30-4041-8425-ec6f4dbf76d4: {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+sendRequest > input >  {"action":"read_message","uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"],"fromseqno":"1"}
+[Load Balancer] Routing POST /api/chat -> http://localhost:3033
+uid >  71d563a0-ef30-4041-8425-ec6f4dbf76d4  > touid  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+/api/chat touid[] ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  71d563a0-ef30-4041-8425-ec6f4dbf76d4 , >>  {"success":true,"count":1,"data":[{"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7"}],"view":[{"col_name":"uid","value":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid >  {"uid":"71d563a0-ef30-4041-8425-ec6f4dbf76d4","touid":["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]}
+input.touid 2 > input.touid >  ["4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb"]
+fetch response >  4f82224a71503071459d1ffa1e1ea16ab11b20c17e1fb , >>  {"success":true,"count":1,"data":[{"uid":"IF02098"}],"view":[{"col_name":"uid","value":"IF02098","html_type":"text"}],"columns":{"success":true,"tableName":"t_portal_user","columns":[{"id":"d238505d-802a-4566-b539-845324f86d3b","pid":"PORTAL_USER_FORM_ID","label":"User ID","seq":3,"col_name":"uid","dt_type":"character varying(50)","html_type":"text","visible":"YES","ref_col":null,"def_val":null,"isdisabled":"NO","isempty":"YES","dupvalue":null,"merge_with_col_name":null,"hint":null,"validatevalue":null}],"count":1,"error":null},"objectLabel":"Portal Users"}
+input.touid 3 > input.touid >  IF02098
+input.touid 4 > input.touid >  ["IF02098"]
+resolvedRecords > uid and touid[] >  {"uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"]}
+fromseqno >  1
+socketPayload >  {"action":"read_message","uid":"guestf0f00913-f5b1-4ee8-8911-4a5cbf3d2ab7","touid":["IF02098"],"fromseqno":"1"}
+serverResponse >  { node: [] }
+serverResponse > read_message clear {"status":"success","raw":{"node":[]}}
+chatwebshocket > resp > uid = 71d563a0-ef30-4041-8425-ec6f4dbf76d4, response > {"node":[]}

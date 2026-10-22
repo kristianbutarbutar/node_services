@@ -18,8 +18,8 @@ const storage = new Storage();
 const PORT = 3002;
 const SAVE_OBJECT_ENDPOINT = `${ip_api.api_3000}/api/save-object`;
 const DROP_OBJECT_ENDPOINT = `${ip_api.api_3000}/api/drop-object`;
-const GCP_BUCKET_NAME = process.env.GCP_BUCKET_NAME || 'amgreat-app-public-assets';
-const GCP_DEST_FOLDER = process.env.GCP_DEST_FOLDER || 'upload-image';
+const GCP_BUCKET_NAME = 'amgreat-app-public-assets';
+const GCP_DEST_FOLDER = 'upload-image';
 
 // Allowed Origins List
 const allowedOrigins = [
@@ -66,7 +66,7 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 // Directory Resolution
 //const configuredBasePath = '/mnt/disks/my-bucket';
-const configuredBasePath = '/Users/admin/Documents/gemini_src_dev_react';
+const configuredBasePath = `${ip_api.configuredBasePath}`;
 const uploadBase = fs.existsSync(configuredBasePath)
   ? configuredBasePath
   : path.resolve(__dirname);
