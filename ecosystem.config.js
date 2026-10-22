@@ -23,6 +23,14 @@ module.exports = {
       script: "chatwebshocket.js",
       max_memory_restart: "300M",
       env: { NODE_ENV: "production" }
+    },
+    {
+      name: "fileapimulter",
+      script: "fileapimulter.js",
+      max_memory_restart: "300M",
+      env_file: "./.env-3002",
+      env: { NODE_ENV: "production" }
     }
+
   ]
 };

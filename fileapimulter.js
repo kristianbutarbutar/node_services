@@ -9,6 +9,8 @@ const fsPromises = require('fs/promises');
 const { Storage } = require('@google-cloud/storage');
 const ip_api = require('./host');
 
+require('stream').PassThrough.prototype.setMaxListeners(30);
+
 const app = express();
 
 // Initialize GCP Storage client
@@ -67,9 +69,14 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 // Directory Resolution
 //const configuredBasePath = '/mnt/disks/my-bucket';
 const configuredBasePath = `${ip_api.configuredBasePath}`;
+
+console.log("configuredBasePath > ", configuredBasePath);
+
 const uploadBase = fs.existsSync(configuredBasePath)
   ? configuredBasePath
   : path.resolve(__dirname);
+
+console.log("uploadBase > ", uploadBase);
 
 const uploadDir = path.join(uploadBase, 'fileuploads');
 
@@ -179,12 +186,17 @@ app.get('/api/read', async (req, res) => {
  */
 async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
   const { savedFiles = [], isSuccess = 'false', sessionid = '', htmleditor = '', recordid = '' } = input || {};
+
+
+  console.log("input > ", JSON.stringify(input));
+
   const results = {
     response1: null,
     id: '',
     fileResponses: [],
     success: false
   };
+
 
   try {
     const payload1 = {
@@ -205,6 +217,9 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
     });
 
     const response1 = await res1.json();
+
+    console.log("response1 > ", JSON.stringify(response1));
+
     results.response1 = response1;
 
     const isSuccessMatch = String(isSuccess) === 'true' || isSuccess === true;

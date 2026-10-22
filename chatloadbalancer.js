@@ -56,6 +56,6 @@ const server = http.createServer((req, res) => {
 });
 
 const PORT = 3003;
-server.listen(PORT, () => {
+server.listen(PORT, "0.0.0.0", () => {
     console.log(`API Load Balancer running on port ${PORT}`);
 });

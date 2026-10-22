@@ -123,7 +123,7 @@ async function genSession(uid, expireMinutes = 5) {
         value: val
       };
     });
-    
+
     console.log("before saveForm > ", JSON.stringify(formData));
 
     saveResult = await saveForm({
@@ -318,12 +318,12 @@ async function getTableColumnsForForm(v_object_id, filterColumns = [], sessionid
   const rawResult = await dbEngine.executeQuery(queryPayload);
 
   if (rawResult.success && Array.isArray(rawResult.data) && rawResult.data.length > 0) {
-    
+
     console.log("getTableColumnsForForm > 1 > ");
 
     for (const item of rawResult.data) {
       if (item.html_type && String(item.html_type).toLowerCase() === 'password') {
-        
+
         const respkeys = createasymetrickey();
 
         if (respkeys && (respkeys.private || respkeys.public)) {
