@@ -186,7 +186,7 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
     success: false
   };
 
-  console.log("archieveUploadedFiles > received recorid = ", recordid);
+  //console.log("archieveUploadedFiles > received recorid = ", recordid);
 
   try {
     const payload1 = {
@@ -201,7 +201,7 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...(sessionid ? { 'x-session-id': sessionid } : {})
+        'X-Session-Token': sessionid || "",
       },
       body: JSON.stringify(payload1)
     });
@@ -216,8 +216,6 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
 
       const __pid = recordid && recordid.trim() !== '' ? recordid : response1.id;
 
-      console.log("archieveUploadedFiles > 1 ", __pid);
-
       if (recordid && recordid.trim() !== '') {
 
         let __result = {};
@@ -227,15 +225,11 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
         } catch (err) {
           console.error('Error in archieveUploadedFiles 1111 :', err);
         }
-
-
         response1.id = __pid;
-
-        console.log("archieveUploadedFiles > 2 ", response1.id, " > __pid = ", __pid, " > __result > ", JSON.stringify(__result));
-
+        //console.log("archieveUploadedFiles > 2 ", response1.id, " > __pid = ", __pid, " > __result > ", JSON.stringify(__result));
       }
 
-      console.log("archieveUploadedFiles > 3 ", response1.id, " > __pid = ", __pid);
+      //console.log("archieveUploadedFiles > 3 ", response1.id, " > __pid = ", __pid);
 
       for (const file of savedFiles) {
         const payload2 = {
@@ -254,18 +248,24 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            ...(sessionid ? { 'x-session-id': sessionid } : {})
+            'X-Session-Token': sessionid || "",
           },
           body: JSON.stringify(payload2)
         });
+        //console.log("saved UPLOADED_FILES_FORM_ID > session id > ", sessionid );
 
         const response2 = await res2.json();
+
         results.fileResponses.push(response2);
       }
     }
+    
     results.success = true;
+
     results.id = response1.id;
+
     return results;
+
   } catch (err) {
     console.error('Error in archieveUploadedFiles:', err);
     return {
@@ -292,7 +292,7 @@ async function doDrop(input, endpoint = DROP_OBJECT_ENDPOINT) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        ...(sessionid ? { 'x-session-id': sessionid } : {})
+        'X-Session-Token': sessionid || "",
       },
       body: JSON.stringify(payload)
     });
@@ -395,17 +395,17 @@ async function copyToGCPBucket(input) {
 app.post('/api/upload', async (req, res) => {
   const { sessionid = '', message = '', files = [], htmleditor = '', recordid = '' } = req.body || {};
 
+  const __sessionid = req.headers['X-Session-Token'] || req.headers['x-session-token'] || "";
+
   if (!Array.isArray(files) || files.length === 0) {
     return res.status(400).json({
       success: false,
       status: 'false',
-      sessionid,
+      sessionid: __sessionid,
       message: 'No files provided in files array.',
       files: []
     });
   }
-
-  console.log("inside /api/upload, recordid received = ", recordid);
 
   const savedFiles = [];
   const errors = [];
@@ -466,12 +466,13 @@ app.post('/api/upload', async (req, res) => {
       });
     }
   }
+  console.log("__sessionid > ", __sessionid);
 
   const isSuccess = savedFiles.length > 0;
   const archiveResult = await archieveUploadedFiles({
     savedFiles,
     isSuccess: isSuccess ? 'true' : 'false',
-    sessionid,
+    sessionid:__sessionid,
     htmleditor,
     recordid
   });
@@ -479,7 +480,7 @@ app.post('/api/upload', async (req, res) => {
   let gcpBucketResult = null;
   if (archiveResult && archiveResult.success && savedFiles.length > 0) {
     gcpBucketResult = await copyToGCPBucket({
-      sessionid,
+      sessionid:__sessionid,
       bucketName: GCP_BUCKET_NAME,
       destFolder: GCP_DEST_FOLDER,
       file: savedFiles.map((file) => ({
@@ -493,7 +494,7 @@ app.post('/api/upload', async (req, res) => {
   return res.status(isSuccess ? 200 : 400).json({
     success: isSuccess,
     status: isSuccess ? 'true' : 'false',
-    sessionid,
+    sessionid:__sessionid,
     message: message || (isSuccess ? `${savedFiles.length} file(s) processed successfully.` : 'File processing failed.'),
     id: isSuccess ? archiveResult.id : '',
     files: savedFiles,

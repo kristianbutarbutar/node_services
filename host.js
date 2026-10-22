@@ -10,7 +10,7 @@ const chat_server = '127.0.0.1';
 const token_server = '127.0.0.1';
 const chatapi3031 = 'localhost';
 const chatapi3032 = 'localhost';
-const chatapi3033 = '127.0.0.1';
+const chatapi3033 = 'localhost';
 
 module.exports = {
     api_3000,

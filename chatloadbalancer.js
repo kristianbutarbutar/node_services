@@ -14,6 +14,7 @@ process.on('unhandledRejection', (reason, promise) => {
 const backendServers = [
     { host: ip_api.chatapi3031, port: 3031 },
     { host: ip_api.chatapi3032, port: 3032 },
+    { host: ip_api.chatapi3033, port: 3033 },
 ];
 
 let currentIndex = 0;

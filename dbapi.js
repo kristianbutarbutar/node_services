@@ -15,7 +15,7 @@ app.use(helmet({
 // CORS Middleware - Configured for Vite (5173) and local client/server (3000)
 const allowedOrigins = [
   'http://localhost:5173','http://127.0.0.1:5173', 'http://localhost:3000',
-  'http://127.0.0.1:3000', 'http://amgreat.id', 'https://amgreat.id', `${ip_api.api_3000}`, `${ip_api.front_end}`
+  'http://127.0.0.1:3000', 'http://amgreat.id', 'https://amgreat.id', `${ip_api.api_3002}`, `${ip_api.api_3000}`, `${ip_api.front_end}`
 ];
 
 app.use(cors({
@@ -160,8 +160,8 @@ app.post('/api/save-object', async (req, res) => {
     
     const objectid = req.body.objectid || req.body.tableName;
     
-    console.log("__sessionid > ", __sessionid);
-    console.log("objectid > ", objectid);
+    //console.log("__sessionid > ", __sessionid);
+    //console.log("objectid > ", objectid);
 
     if (!__sessionid) {
       return res.status(400).json({
@@ -253,7 +253,9 @@ app.post('/api/drop-object', async (req, res) => {
     }
 
     const result = await calldbapi.dropObject(req.body);
+
     res.status(result.success ? 200 : 400).json(result);
+
   } catch (err) {
     res.status(500).json({
       success: false,
