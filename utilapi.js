@@ -120,17 +120,17 @@ app.post('/api/get-object-schema', async (req, res) => {
 
     let result = {};
 
-    
+
     if (!dmlForm) {
-      
-      console.log("dmlForm > 1 ");
-      
+
+      //     console.log("dmlForm > 1 ");
+
       result = await calldbapi.getTableColumns(objectid, filterColumns);
 
     } else if (dmlForm) {
 
       const __session = await calldbapi.genSession(__uid, expireMinutes = 5);
-                
+
       __header['X-Session-Token'] = __session.sessionid;
 
       res.set(__header);

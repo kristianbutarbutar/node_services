@@ -94,6 +94,9 @@ app.post('/api/query-object', async (req, res) => {
       const sliceData = result.data.slice(0, noOfRow);
       result.data = sliceData;
     }
+
+    result.columns.tableName = "";
+
     res.status(result.success ? 200 : 400).json(result);
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
@@ -294,6 +297,60 @@ app.post('/api/drop', async (req, res) => {
  * POST /api/update-object
  * Accepts JSON payload { tableName, recordid, columns, sessionid } and calls calldbapi.updateObject()
  */
+app.post('/api/intent', async (req, res) => {
+  const __sessionid = req.headers['x-session-token'] || req.headers['X-Session-Token'] || "";
+  try {
+
+    if (!__sessionid || !req.body.target) {
+      return res.status(400).json({
+        success: false,
+        sessionid: req.body.sessionid || '',
+        error: "Session was expired, record was not processed. please reload for reauthenticate for new session."
+      });
+
+    } else {
+
+      const __duemin = await calldbapi.getSessionDue(__sessionid);
+
+      console.log("__sessionid > ", __sessionid, " due = ", __duemin);
+
+      if (__duemin <= 0) {
+        return res.status(400).json({
+          success: false,
+          sessionid: __sessionid || '',
+          error: "Form's session was due, please reload for reauthenticate for new session."
+        });
+      }
+
+    }
+
+    const objectid = req.body.objectid;
+
+    if (!objectid) {
+      return res.status(400).json({
+        success: false,
+        sessionid: req.body.sessionid || '',
+        error: "Missing required 'object id'."
+      });
+    }
+
+    const result = await calldbapi.updateObjectColumn(req.body, (req.body.target && (req.body.target.toLowerCase === "1" || req.body.target.toLowerCase === "2" || req.body.target.toLowerCase === "3")));
+
+    res.status(result.updateResult.success ? 200 : 400).json(result.updateResult);
+
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      sessionid: req.body?.sessionid || '',
+      error: err.message
+    });
+  }
+});
+
+/**
+ * POST /api/update-object
+ * Accepts JSON payload { tableName, recordid, columns, sessionid } and calls calldbapi.updateObject()
+ */
 app.post('/api/update-object', async (req, res) => {
 
   const __sessionid = req.headers['x-session-token'] || req.headers['X-Session-Token'] || "";
@@ -311,6 +368,8 @@ app.post('/api/update-object', async (req, res) => {
     } else {
 
       const __duemin = await calldbapi.getSessionDue(__sessionid);
+
+      console.log("__sessionid > ", __sessionid, " due = ", __duemin);
 
       if (__duemin <= 0) {
         return res.status(400).json({
@@ -333,7 +392,9 @@ app.post('/api/update-object', async (req, res) => {
     }
 
     const result = await calldbapi.updateObject(req.body);
+
     res.status(result.success ? 200 : 400).json(result);
+
   } catch (err) {
     res.status(500).json({
       success: false,
@@ -396,8 +457,8 @@ app.post('/api/delete', async (req, res) => {
 });
 
 // Start Express HTTP Server
-//app.listen(PORT, () => {
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
+  //app.listen(PORT, '0.0.0.0', () => {
   console.log(`🛡️  Secure DB API Server running on http://localhost:${PORT}`);
   console.log(`📡 CORS allowed for: ${allowedOrigins.join(', ')}`);
 });

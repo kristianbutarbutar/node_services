@@ -124,14 +124,14 @@ async function genSession(uid, expireMinutes = 5) {
       };
     });
 
-    console.log("before saveForm > ", JSON.stringify(formData));
+    //console.log("before saveForm > ", JSON.stringify(formData));
 
     saveResult = await saveForm({
       objectid: sessionTableId,
       columns: formData
     });
   }
-  console.log("genSession finale > ", header['X-Session-Token']);
+  //console.log("genSession finale > ", header['X-Session-Token']);
   return {
     sessionid: header['X-Session-Token'],
     id: saveResult.id || null,
@@ -693,11 +693,11 @@ async function queryObject(tableName, whereClause = [], filterColumns = []) {
   columnsJson.tableName = tableDBName.tablename;
   const queryPayload = __QGenerator(columnsJson, whereClause);
 
-  //console.log("queryObject > queryPayload > ", JSON.stringify(queryPayload));
+  console.log("queryObject > queryPayload > ", JSON.stringify(queryPayload));
 
   var queryResult = await executeQuery(queryPayload);
 
-  //console.log("queryObject > queryResult > ", JSON.stringify(queryResult));
+  console.log("queryObject > queryResult > ", JSON.stringify(queryResult));
 
   if (queryResult.count == 1) {
     queryResult.view = await recordAttributes(queryResult, columnsJson.columns);
@@ -766,7 +766,7 @@ async function queryObjectInTable(tableName, whereClause = [], row_start = 1, ro
     htmlTable = '<table class="db-table"><thead><tr><td>No records found</td></tr></thead></table>';
   } else {
 
-    console.log("queryObjectInTable > queryObject > ", JSON.stringify(queryResult));
+    //    console.log("queryObjectInTable > queryObject > ", JSON.stringify(queryResult));
 
     records = queryResult.data || [];
     totalRecords = records.length;
@@ -852,7 +852,7 @@ async function saveForm(formData) {
         idParam.value = id_uuid;
       }
     }
-    console.log(" await SaveForm => ", JSON.stringify(insertPayload));
+    //console.log(" await SaveForm => ", JSON.stringify(insertPayload));
 
     const insertResult = await executeInsert(insertPayload);
 
@@ -898,7 +898,7 @@ async function dropObject(input) {
     const column = input && input.bycolumn && input.bycolumn !== '' ? input.bycolumn : "id";
     const sessionid = input ? (input.sessionid || '') : '';
 
-    console.log("dropObject ", JSON.stringify(input));
+    //console.log("dropObject ", JSON.stringify(input));
 
     if (!tableName) {
       return {
@@ -931,7 +931,7 @@ async function dropObject(input) {
         idType = idCol.dt_type || idCol.data_type || idCol.datatype || idCol.type || idCol.col_type || 'INT';
       }
     }
-    console.log("dropObject tableName ", tableDBName.tablename);
+    //console.log("dropObject tableName ", tableDBName.tablename);
 
     const deletePayload = {
       sql: `DELETE FROM ${tableDBName.tablename} WHERE ${column} = $1 `,
@@ -939,7 +939,7 @@ async function dropObject(input) {
         { value: recordid, type: idType }
       ]
     };
-    console.log("deletePayload > ", JSON.stringify(deletePayload));
+    //console.log("deletePayload > ", JSON.stringify(deletePayload));
 
     const deleteResult = await dbEngine.executeDelete(deletePayload);
 
@@ -997,6 +997,73 @@ async function dropObjectItems(input) {
       ...deleteResult,
       sessionid: sessionid
     };
+  } catch (err) {
+    return {
+      success: false,
+      sessionid: input?.sessionid || '',
+      error: err.message
+    };
+  }
+}
+
+const __updateObjectColumn = (input, target, operator) => {
+
+  const __colname = (target && target === "1" ? "love_qty" : (target && target === "2" ? "share_qty" : (target && target === "3" ? "star_qty" : "")));
+
+  if (operator === "+") {
+    return `${__colname}=COALESCE(${__colname}, 0)+1`;
+  } else if (operator === "=") {
+    return `${__colname}${input.operator}'${input.value}'`;
+  }
+  return "delflag = null";
+}
+
+async function updateObjectColumn(input, target) {
+  try {
+    const tableName = input ? input.objectid : null;
+    const recordid = input ? input.recordid : null;
+    const __value = input ? input.value : null;
+    const operator = input ? input.operator : null;
+    const __target = input ? input.target : null;
+
+    const isValid = (operator) => /^[+=]+$/.test(operator);
+
+    if (!tableName || !recordid || !isValid || !__target) {
+      return {
+        success: false,
+        sessionid: sessionid,
+        error: "Missing required parameter in input payload."
+      };
+    }
+
+    let __column = __updateObjectColumn(input, __target, operator);
+
+    const colsJson = await getTableColumns(tableName);
+    const tableDBName = await getTableName({ id: tableName });
+    const sql = `UPDATE ${tableDBName.tablename} SET ${__column} WHERE id = $1`;
+
+    console.log("sql >>>>>> ", sql);
+    console.log("recordid >>>>>> ", recordid);
+
+    let params = [];
+
+    params.push({
+      value: recordid,
+      type: "VARCHAR"
+    });
+
+    //UPDATE t_ec_products SET love_qty=love_qty+1 WHERE id = '64bbf6c1-6490-4aa1-a9ab-8a964c5d1f58';
+
+    console.log("params >>>> ", JSON.stringify(params));
+
+    const updateResult = await dbEngine.executeUpdate({ sql, params });
+
+    console.log("updateResult >>>>> ", JSON.stringify(updateResult));
+
+    return {
+      updateResult: updateResult
+    };
+
   } catch (err) {
     return {
       success: false,
@@ -1203,5 +1270,6 @@ module.exports = {
   dropObject,
   dropObjectItems,
   updateObject,
-  getTableColumnsForForm
+  getTableColumnsForForm,
+  updateObjectColumn
 };

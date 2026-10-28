@@ -120,40 +120,27 @@ async function getList(input) {
   }
 
   const queryPayload = {
-    sql: "SELECT id, description FROM t_group_members WHERE pid = $1 order by seq",
+    sql: "SELECT id, label FROM t_group_members WHERE pid = $1 order by seq",
     params: [
       { value: groupid, type: "VARCHAR" }
     ]
   };
 
-  //const response = await calldbapi.executeQuery(queryPayload);
+  const response = await calldbapi.executeQuery(queryPayload);
 
-  try { 
-    const response = await fetch(`${ip_api.api_3000}/api/query`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(payload)
-    });
-
-    const data = await response.json();
-
-    return {
-      ...data,
-      sessionid
-    };
-
-  } catch (err) {
+  if (!response.success) {
     return {
       success: false,
       sessionid,
       data: [],
       count: 0,
-      error: `Failed to call getList: ${err.message}`
+      error: data.error || "Failed to query getList"
     };
   }
 
+  //console.log("data >>>>> ", JSON.stringify(response));
+
+  return { data: response };
 }
 
 /**
@@ -188,11 +175,7 @@ async function getListForColumnId(input) {
   //const mapResult = await calldbapi.executeQuery(queryPayload);
   //console.log("getListForColumnId > mapResult > ", JSON.stringify(mapResult));
 
-  try { //'http://localhost:3000/api/query-object'
-
-    console.log("queryPayload > ", JSON.stringify(queryPayload));
-    //console.log(`${ip_api.api_3000}/api/query`);
-
+  try {
     const mapResult = await fetch(`${ip_api.api_3000}/api/query`, {
       method: 'POST',
       headers: {
@@ -202,8 +185,6 @@ async function getListForColumnId(input) {
     });
 
     const data = await mapResult.json();
-
-    //console.log("Result Data > ", JSON.stringify(data));
 
     if (!data.success) {
       return {
@@ -235,6 +216,7 @@ async function getListForColumnId(input) {
     // 2. Fetch via list_group_id from t_group_members
     if (listGroupId.length > 0) {
       listResponse = await getList({ groupid: listGroupId, sessionid });
+      listResponse = listResponse.data || [];
     }
     // 3. Fallback: Fetch via direct or JSON-formatted SQL statement
     else if (sqlList.length > 0) {
