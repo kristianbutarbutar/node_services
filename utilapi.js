@@ -120,10 +120,7 @@ app.post('/api/get-object-schema', async (req, res) => {
 
     let result = {};
 
-
     if (!dmlForm) {
-
-      //     console.log("dmlForm > 1 ");
 
       result = await calldbapi.getTableColumns(objectid, filterColumns);
 

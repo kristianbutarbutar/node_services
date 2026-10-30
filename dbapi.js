@@ -140,10 +140,10 @@ app.post('/api/query-object-in-table', async (req, res) => {
   }
 });
 
-const overrideMandatoryColumns = (formData) => {
+const overrideMandatoryColumns = (formData, __public_client) => {
   formData.columns.some(col => {
     const name = col.col_name;
-    if (name && String(name).toLowerCase() === 'createdby') {
+    if (name && String(name).toLowerCase() === 'createdby' && (!col.value || col.value.trim() === "")) {
       col.value = 'TEST';
     }
   });
@@ -158,13 +158,14 @@ const overrideMandatoryColumns = (formData) => {
 app.post('/api/save-object', async (req, res) => {
 
   const __sessionid = req.headers['X-Session-Token'] || req.headers['x-session-token'] || "";
+  const __public_client = req.headers['X-Public-Client'] || req.headers['x-public-client'] || "";
 
   try {
 
     const objectid = req.body.objectid || req.body.tableName;
 
-    //console.log("__sessionid > ", __sessionid);
-    //console.log("objectid > ", objectid);
+    console.log("__public_client > ", __public_client);
+    console.log("objectid > ", objectid);
 
     if (!__sessionid) {
       return res.status(400).json({
@@ -184,7 +185,6 @@ app.post('/api/save-object', async (req, res) => {
           error: "Form's session was due, please reload for reauthenticate for new session."
         });
       }
-
     }
 
     if (!objectid) {
@@ -195,7 +195,7 @@ app.post('/api/save-object', async (req, res) => {
       });
     }
 
-    const saveResult = await calldbapi.saveForm(overrideMandatoryColumns(req.body));
+    const saveResult = await calldbapi.saveForm(overrideMandatoryColumns(req.body, __public_client));
 
     const responsePayload = {
       ...saveResult,

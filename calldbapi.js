@@ -852,7 +852,6 @@ async function saveForm(formData) {
         idParam.value = id_uuid;
       }
     }
-    //console.log(" await SaveForm => ", JSON.stringify(insertPayload));
 
     const insertResult = await executeInsert(insertPayload);
 
@@ -898,8 +897,6 @@ async function dropObject(input) {
     const column = input && input.bycolumn && input.bycolumn !== '' ? input.bycolumn : "id";
     const sessionid = input ? (input.sessionid || '') : '';
 
-    //console.log("dropObject ", JSON.stringify(input));
-
     if (!tableName) {
       return {
         success: false,
@@ -921,6 +918,7 @@ async function dropObject(input) {
     const colsJson = await getTableColumns(tableDBName.tablename);
 
     let idType = 'VARCHAR';
+
     if (colsJson && Array.isArray(colsJson.columns)) {
       const idCol = colsJson.columns.find(col => {
         const name = col.col_name || col.column_name || col.columnname || col.name || col.colname;
@@ -931,7 +929,6 @@ async function dropObject(input) {
         idType = idCol.dt_type || idCol.data_type || idCol.datatype || idCol.type || idCol.col_type || 'INT';
       }
     }
-    //console.log("dropObject tableName ", tableDBName.tablename);
 
     const deletePayload = {
       sql: `DELETE FROM ${tableDBName.tablename} WHERE ${column} = $1 `,
@@ -939,14 +936,15 @@ async function dropObject(input) {
         { value: recordid, type: idType }
       ]
     };
-    //console.log("deletePayload > ", JSON.stringify(deletePayload));
 
     const deleteResult = await dbEngine.executeDelete(deletePayload);
 
     return {
       ...deleteResult,
+      success: deleteResult.success,
       sessionid: sessionid
     };
+
   } catch (err) {
     return {
       success: false,

@@ -86,10 +86,9 @@ function normalizeSqlPlaceholders(sql) {
  */
 async function executeSql(sql, params = []) {
   const formattedSql = normalizeSqlPlaceholders(sql);
-  //console.log("INSIDE formattedSql > ", JSON.stringify(formattedSql));
-  //console.log("INSIDE params > ", JSON.stringify(params));
+
   const result = await pool.query(formattedSql, params);
-  //console.log("INSIDE executeSql > ", JSON.stringify(result));
+
   return result;
 }
 
