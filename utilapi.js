@@ -51,6 +51,9 @@ app.use(express.json());
  */
 app.post('/api/inquery', async (req, res) => {
   try {
+    if(!req.body || !req.body.objectid || !req.body.whereClause || req.body.whereClause.length <=0){
+      res.status(500).json({ success: false, error: 'undefinitive query' });
+    }  
     const result = await dbutil.getObjectRecords(req.body);
     res.status(result.success !== false ? 200 : 400).json(result);
   } catch (err) {
