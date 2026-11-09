@@ -203,8 +203,8 @@ app.post('/api/html-to-pdf', async (req, res) => {
 });
 
 // Start Utility API Server on port 3001
-app.listen(PORT, () => {
-  //app.listen(PORT, '0.0.0.0', () => {
+  //app.listen(PORT, () => {
+  app.listen(PORT, '0.0.0.0', () => {
   console.log(`🛡️  Util API Server running on http://localhost:${PORT}`);
   console.log(`📡 CORS allowed for: ${allowedOrigins.join(', ')}`);
 });
