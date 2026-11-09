@@ -70,13 +70,13 @@ app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 //const configuredBasePath = '/mnt/disks/my-bucket';
 const configuredBasePath = `${ip_api.configuredBasePath}`;
 
-console.log("configuredBasePath > ", configuredBasePath);
+//console.log("configuredBasePath > ", configuredBasePath);
 
 const uploadBase = fs.existsSync(configuredBasePath)
   ? configuredBasePath
   : path.resolve(__dirname);
 
-console.log("uploadBase > ", uploadBase);
+//console.log("uploadBase > ", uploadBase);
 
 const uploadDir = path.join(uploadBase, 'fileuploads');
 
@@ -187,8 +187,7 @@ app.get('/api/read', async (req, res) => {
 async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
   const { savedFiles = [], isSuccess = 'false', sessionid = '', htmleditor = '', recordid = '' } = input || {};
 
-
-  console.log("input > ", JSON.stringify(input));
+  //console.log("input > ", JSON.stringify(input));
 
   const results = {
     response1: null,
@@ -218,7 +217,7 @@ async function archieveUploadedFiles(input, endpoint = SAVE_OBJECT_ENDPOINT) {
 
     const response1 = await res1.json();
 
-    console.log("response1 > ", JSON.stringify(response1));
+    //console.log("response1 > ", JSON.stringify(response1));
 
     results.response1 = response1;
 
@@ -486,7 +485,7 @@ app.post('/api/upload', async (req, res) => {
     }
   }
 
-  console.log("__sessionid > ", __sessionid);
+  //console.log("__sessionid > ", __sessionid);
 
   const isSuccess = savedFiles.length > 0;
   const archiveResult = await archieveUploadedFiles({
@@ -496,6 +495,8 @@ app.post('/api/upload', async (req, res) => {
     htmleditor,
     recordid
   });
+
+  //console.log("/api/upload > archieveUploadedFiles > archiveResult > ", JSON.stringify(archiveResult));
 
   let gcpBucketResult = null;
   if (archiveResult && archiveResult.success && savedFiles.length > 0) {
@@ -509,6 +510,7 @@ app.post('/api/upload', async (req, res) => {
         contentType: file.mimetype
       }))
     });
+    //console.log("/api/upload > archieveUploadedFiles > gcpBucketResult > ", JSON.stringify(gcpBucketResult));
   }
 
   return res.status(isSuccess ? 200 : 400).json({

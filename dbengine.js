@@ -98,8 +98,6 @@ async function executeSql(sql, params = []) {
 async function executeQuery(jsonInput) {
   try {
 
-    //console.log("??executeQuery > jsonInput > ", JSON.stringify(jsonInput));
-
     let { sql, params = [], whereClause = [] } = jsonInput;
 
     const activeWhereClause = whereClause.length > 0

@@ -13,6 +13,7 @@ const chatapi3032 = 'localhost';
 const chatapi3033 = 'localhost';
 //const configuredBasePath = '/mnt/disks/my-bucket'; 
 const configuredBasePath = '/Users/admin/Documents/gemini_src_dev_react';
+const api_prq_product_objectid = 'ad1bb5f179b7a0f8';
 
 module.exports = {
     api_3000,
@@ -28,5 +29,6 @@ module.exports = {
     chatapi3031,
     chatapi3032,
     chatapi3033,
-    configuredBasePath
+    configuredBasePath,
+    api_prq_product_objectid
 }

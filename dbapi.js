@@ -164,9 +164,6 @@ app.post('/api/save-object', async (req, res) => {
 
     const objectid = req.body.objectid || req.body.tableName;
 
-    console.log("__public_client > ", __public_client);
-    console.log("objectid > ", objectid);
-
     if (!__sessionid) {
       return res.status(400).json({
         success: false,

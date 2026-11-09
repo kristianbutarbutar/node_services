@@ -453,7 +453,7 @@ function __QGenerator(columnsJson, whereClause = []) {
         const _merge = __m.merge;
         let _m_tobe = "";
 
-        console.log("Merging arrmerge_with_col_name > ", _col_name, " merge = ", _merge);
+        //console.log("Merging arrmerge_with_col_name > ", _col_name, " merge = ", _merge);
 
         col_name_col.forEach((__c, idx) => {
           const _c_n = __c.col_name;
@@ -495,14 +495,22 @@ function __QGenerator(columnsJson, whereClause = []) {
     const conditions = whereClause.map((cond, index) => {
       const operator = cond.operator || '=';
       const paramIndex = index + 1;
+      
       if (!cond.value || cond.value === '') return '';
+
       params.push({
         value: cond.value,
         type: cond.type || 'VARCHAR'
       });
 
       const colPrefix = cond.col_name.includes('.') ? '' : `${tableName}.`;
+
+      if(cond.type && (cond.type.toLowerCase() === 'text' || cond.type.toLowerCase() === 'varchar' || cond.type.toLowerCase().includes('character'))){
+        return `LOWER(${colPrefix}${cond.col_name}) ${operator} LOWER($${paramIndex})`;
+      }
+
       return `${colPrefix}${cond.col_name} ${operator} $${paramIndex}`;
+      
     });
 
     const _sql = ` WHERE ${conditions.join(' AND ')}`;
@@ -609,7 +617,9 @@ function __IGenerator(formData, colsJson) {
   }
 
   const sql = `INSERT INTO ${tableName} (${colNames.join(', ')}) VALUES (${placeholders.join(', ')})`;
+
   console.log("__IGenerator sql > ", JSON.stringify(sql));
+  
   console.log("__IGenerator params > ", JSON.stringify(params));
 
   return {

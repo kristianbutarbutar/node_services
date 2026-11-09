@@ -12,15 +12,16 @@ const ip_api = require('./host');
  * @returns {Promise<Object>} The JSON response returned by the API endpoint.
  */
 async function getObjectRecords(input) {
-  const { objectid, sessionid = '', columns = [], filterColumns = [] } = input || {};
+  const { objectid, sessionid = '', whereClause = [], filterColumns = [] } = input || {};
 
   const payload = {
     tableName: objectid,
-    whereClause: columns,
+    whereClause: whereClause,
     filterColumns: filterColumns
   };
 
-  try { //'http://localhost:3000/api/query-object'
+  try { 
+
     const response = await fetch(`${ip_api.api_3000}/api/query-object`, {
       method: 'POST',
       headers: {
@@ -31,9 +32,8 @@ async function getObjectRecords(input) {
 
     const data = await response.json();
 
-    console.log("getObjectRecords response:", JSON.stringify(data));
-
     return data;
+
   } catch (err) {
     console.error("getObjectRecords error:", err.message);
     return {

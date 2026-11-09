@@ -46,13 +46,45 @@ app.use(cors({
 app.use(express.json());
 
 /**
- * POST /api/query
+ * POST /api/inquery
  * Invokes dbutil.getObjectRecords with the incoming request body payload.
  */
 app.post('/api/inquery', async (req, res) => {
   try {
     const result = await dbutil.getObjectRecords(req.body);
     res.status(result.success !== false ? 200 : 400).json(result);
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+/**
+ * POST /api/prq
+ * Invokes dbutil.getObjectRecords with the incoming request body payload.
+ */
+app.post('/api/prq', async (req, res) => {
+  try {
+    
+    let __columns = null;
+    
+    let __payload = {objectid:ip_api.api_prq_product_objectid, whereClause:[], filterColumns:[]};
+
+    if(req.body.searchtext && req.body.searchtext.trim() !== ''){
+
+        let isProduct = false;
+        
+        const __searchtext = req.body.searchtext;
+      
+        let __whereClause = [{col_name:'name_1', value:'%' + __searchtext.trim().toLowerCase() + '%', operator:'like', type:'varchar'}];
+        
+        __payload.whereClause = __whereClause;
+        
+    } 
+
+    const result = await dbutil.getObjectRecords(__payload);
+    
+    res.status(result.success !== false ? 200 : 400).json(result);
+
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
